@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu</title>
+	<link href = "css/style.css" rel = "stylesheet" type = "text/css" />
+</head>
+<body>
+	<ul id = "menu" class = "memu">
+		<li><a href = "/php">PHP</a></li>
+		<li><a href = "/html">HTML</a></li>
+		<li><a href = "/javascript">JavaScript</a></li>
+		<li><a href = "/flash">Flash</a></li>
+	</ul>
+
+	<script type="text/javascript">
+		menu.onclick = function(event)
+		{
+			if(event.target.nodeName != "A") return;
+
+			let href = event.target.getAttribute("href");
+			alert(href); // может быть подгрузка с сервера, генерация интерфейса и т.п.
+
+			return false;
+		}
+	</script>
+</body>
+</html>

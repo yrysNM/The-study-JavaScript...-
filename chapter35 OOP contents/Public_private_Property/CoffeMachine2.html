@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	function  CoffeMachine(power)
+	{
+		this.waterAmount = 0;
+
+		// расчёт времени для кипячения
+		function getBoilTime()
+		{
+			return 1000; //formula not yet 
+
+		}
+
+		function onReady()
+		{
+			alert("Coffe ready(Кофе готов!)");
+		}
+
+		this.run = function() //~pulic == this
+		{
+			 // setTimeout ‐ встроенная функция,
+	    	// она запустит onReady через getBoilTime() миллисекунд
+	    	setTimeout(onReady, getBoilTime());
+		};
+	}
+
+	var coffeMachine = new CoffeMachine(100);
+	coffeMachine.waterAmount = 200;
+
+	coffeMachine.run();
+</script>

@@ -1,0 +1,43 @@
+<script type="text/javascript">
+
+	function Accumulator(value)
+	{
+		this.read = function()
+		{
+			var int = +prompt("Enter integer for plus in value: ", 0);
+			// alert(int + value);
+			value += int;
+		};
+
+		
+		this.value = function()
+		{
+			return value;
+		};
+	}
+
+	var accumulator = new Accumulator(1);
+
+	accumulator.read();
+	accumulator.read();
+
+	alert(accumulator.value()); //it is my code 
+
+
+	//this is solution ⬇
+	function Accumulator2(startingValue)
+	{
+		this.value = startingValue;
+
+		this.read =	function()
+		{
+			this.value += +prompt("How much to plus? ", 0);
+		};
+	}
+
+	var accumulator2 = new Accumulator2(2);
+	accumulator2.read();
+	accumulator2.read();
+	alert(accumulator2.value);
+
+</script>

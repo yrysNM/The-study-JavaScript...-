@@ -1,0 +1,14 @@
+Счётчик:
+<button data‐counter>1</button>
+Ещё счётчик:
+<button data‐counter>2</button>
+
+<script type="text/javascript">
+  document.onclick = function(event)
+  {
+    if(!event.target.hasAttribute("data‐counter")) return;
+
+    let counter = event.target;
+    counter.innerHTML++;
+  }
+</script>

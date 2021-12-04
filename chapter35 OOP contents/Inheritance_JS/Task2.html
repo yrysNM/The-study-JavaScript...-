@@ -1,0 +1,69 @@
+<script type="text/javascript">
+	function Machine(power)
+	{
+	 	this._enabled = false;
+
+	 	var self = this;
+
+	 	this.enable = function()
+	 	{
+	 		   // используем внешнюю переменную вместо this
+	 		   	self._enabled = true;
+	 	};
+
+	 	this.disable = function()
+	 	{
+	 		self._enabled = false;
+	 	};
+	}
+
+	function CoffeeMachine(power)
+	{
+		Machine.apply(this, arguments);
+
+		var waterAmount = 0;
+
+		this.setWaterAmount = function(amount)
+		{
+			waterAmount = amount;
+		};
+
+		var paerntEnable = this.enable;
+		var disEnable = this.disable;
+		var timerId;
+		this.enable = function()
+		{
+			paerntEnable(); // теперь можно вызывать как угодно, this не важен
+			//this.run()
+			
+		}
+
+		this.disable = function() 
+		{
+			disEnable();
+				clearTimeout(timerId);
+			
+		}
+
+
+
+		function onReady()
+		{
+			alert("Coffe done!");
+		}
+
+		this.run = function()
+		{
+			if(!this._enabled)
+			{
+				throw new Error("Кофеварка выключена");
+			}
+			
+			   timerId = setTimeout(onReady, 1000);
+		};
+	}
+	var coffeeMachine = new CoffeeMachine(10000);
+	coffeeMachine.enable();
+	coffeeMachine.run();
+	coffeeMachine.disable(); // остановит работу, ничего не выведе
+</script>

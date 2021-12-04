@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	function Animal(name)
+	{
+		this.speed = 0; 
+		this.name = name;
+
+		this.run = function(speed) 
+		{	
+			this.speed += speed;
+			alert(this.name + " running, speed " + this.speed);
+		};
+
+		this.stop = function() 
+		{
+			this.speed = 0;
+			alert(this.name + " stayed");
+		};
+	}
+
+	var animal = new Animal("The beats");
+
+	alert(animal.speed); //0
+	animal.run(3);
+	animal.run(10);
+	animal.stop();
+</script>

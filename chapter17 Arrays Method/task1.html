@@ -1,0 +1,40 @@
+<script>
+    var obj = {
+        name: "open menu"
+    };
+
+    alert(addClass(obj, "new"));
+    alert(addClass(obj, "open"));
+    alert(addClass(obj, "me"));
+
+    alert(obj.name); //open  menu new me 😎 
+
+    // function addClass(obj, cls) 
+    // {
+    //     if(obj.name !== cls)
+    //     {
+    //         var text = (obj.name + " " + cls); 〰
+    //         return text;
+    //     }
+    // }   
+
+    //no space function ❌" "
+    
+    function addClass(obj, cls)
+    {
+        var classes = obj.name ? obj.name.split(" ") : []; //✔ 💯
+
+        for(var i = 0; i < classes.length; i++)
+        {
+            if(classes[i] == cls) return "alerady have😉🎶"; //class already have
+        }
+
+        classes.push(cls); //add
+
+        obj.name = classes.join(" "); //and update properties ✅
+
+        return obj.name;
+    }
+
+
+</script>

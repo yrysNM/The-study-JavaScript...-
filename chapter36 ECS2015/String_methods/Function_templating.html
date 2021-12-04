@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	"use strict";
+
+	function f(strings, ...values)
+	{
+		alert(JSON.stringify(strings)); ["Sum of "," + "," = \n\n\t\t\t\t","!"]
+		alert(JSON.stringify(strings.raw));  ["Sum of "," + "," = \\n\n\t\t\t\t","!"]
+		alert(JSON.stringify(values)); [3,5,8]
+	}
+
+	let apples = 3;
+	let oranges = 5;
+
+	let str = f`Sum of ${apples} + ${oranges} = \n
+				${apples + oranges}!`;
+
+
+</script>

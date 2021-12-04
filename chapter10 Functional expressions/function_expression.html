@@ -1,0 +1,26 @@
+<script>
+
+    //function declaration
+    function sayHi()
+    {
+        alert("Hello");
+    }
+
+    var func = sayHi;
+    func();
+
+    sayHi = null;
+    sayHi();
+    
+    //function expression
+    var sayHi = function(person)
+    {
+        alert("Hello " + person);
+    }
+    sayHi("Charli");
+
+
+    //unction Declaration – функция, объявленная в основном потоке кода.
+    //Function Expression – объявление функции в контексте какого‑либо выражения, например присваивания
+    
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function Article()
+	{
+		Article.count++;
+	}
+	Article.count = 0;  // статическое свойство‐переменная
+
+	Article.DEFAULT_FORMAT = "html"; // статическое свойство‐константа
+
+	function Article2()
+	{
+		Article2.count++;
+
+		//...
+	}
+	
+
+	Article2.count = 0;
+
+	Article2.showCount= function() 
+	{
+		alert(this.count); 
+	}
+
+	new Article2();
+	new Article2();
+
+	Article2.showCount();
+</script>

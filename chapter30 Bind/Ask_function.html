@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	function ask(question, answer, ok, fail)
+	{
+		var result = prompt(question, " ");
+
+		if(result.toLowerCase() == answer.toLowerCase()) ok();
+
+		else fail();
+	}
+
+	ask("Let the bird out?", "yes", fly, die);
+
+	function fly() {
+		alert("Flying");
+	}
+
+	function die()
+	{
+		alert("Sorry for the bird :( ");
+	}
+</script>

@@ -1,0 +1,14 @@
+<a href="http://example.com/file.zip">...</a>
+<a href="http://ya.ru">...</a>
+
+<script type="text/javascript">
+	let elems = document.body.children;
+
+	for(let i = 0; i < elems.length;i++)
+	{
+		if(elems[i].matches('a[href$= "zip"]'))
+		{
+			alert("Lisnk by arxif: " + elems[i].href);
+		}
+	}
+</script>

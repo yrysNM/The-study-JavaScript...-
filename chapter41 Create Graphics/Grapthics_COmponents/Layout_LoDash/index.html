@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- losdash</title>
+
+	<script type="text/javascript" src = "js/Menu.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		let menu2 = new Menu({
+			title: "Food",
+			items: [
+			"Apple",
+			"Banana",
+			"cheese",
+			"ananas"
+				]
+		});
+
+		/*let elem = menu2.getElem();*/
+		if(!menu2.elem)
+		{
+			
+			document.body.appendChild(menu2.render());
+		}
+
+
+	</script>
+</body>
+</html>

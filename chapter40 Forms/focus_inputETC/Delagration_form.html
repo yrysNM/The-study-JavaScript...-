@@ -1,0 +1,24 @@
+<form id = "form">
+	<input type = "text" name  = "name" value = "Your name" />
+	<input type = "text" name = "surname" value = "Surname: " /> 
+</form>
+
+<style>
+	.focused
+	{
+		outline:  1px solid red;
+	}
+</style>
+
+<script>
+	// ставим обработчики на фазе перехвата, последний аргумент true
+	form.addEventListener("focus", function() 
+	{
+		this.classList.add("focused");
+	}, true);
+
+	form.addEventListener("blur", function()
+	{
+		this.classList.remove("focused");
+	}, true);
+</script>

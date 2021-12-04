@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- DOM element children</title>
+</head>
+<body>
+	<div> Begin </div>
+
+	<ul>
+		<li> Information </li>
+
+	</ul>
+
+	<div>Over </div>
+
+	<script type="text/javascript">
+		for(let i = 0; i < document.body.children.length; i++)
+		{
+			alert(document.body.children[i]); //IDV , UL< DIV...
+
+		}
+
+		let elem = document.documentElement;
+
+		console.log(elem.firstElementChild === elem.children[0]); //true
+		console.log(elem.lastElementChild === elem.children[elem.children.length - 1]); //true
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	/*function handler()
+	{
+		alert("....");
+		return false; @don't work
+	}*/
+
+	//correct
+	function handler(event)
+	{
+		alert("....");
+		event.preventDefault();
+	}
+</script>
+
+<a href = "http: //w3.org" onclick = "handler(event)">w3.org</a> <!-- don't open site -->

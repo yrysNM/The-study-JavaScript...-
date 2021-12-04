@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	function Calculator()
+	{
+		var num1, num2;
+		this.read =  function()
+		{
+			num1 = prompt("Enter number1: ", 0);
+			num2 = prompt("Enter number2: ", 0);
+		};
+
+		this.sum = function()
+		{
+			return (+num1 + +num2);
+		};
+
+		this.mul = function()
+		{
+			return num1 * num2;
+		};
+	}
+
+	var calculator = new  Calculator();
+
+	calculator.read();
+
+	alert("Sum: " + calculator.sum());
+	alert("Multypli: " + calculator.mul());
+</script>

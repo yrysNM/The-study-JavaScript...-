@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+		
+	<img src = "https://www.kindpng.com/picc/m/242-2423906_apollo-cool-ball-cool-ball-png-transparent-png.png"  width = "50px" height = "50px" id = "ball"/>
+
+
+
+<script type="text/javascript">
+	var ball = document.getElementById("ball");
+
+		//not copy
+		ball.ondragstart = function() {
+		  return false;
+		};
+
+
+	ball.onmousedown = function(e)
+	{
+
+		// подготовить к перемещению
+ 		 // 2. разместить на том же месте, но в абсолютных координатах
+		ball.style.position = "absolute";
+		moveAt(e);
+
+
+		document.body.appendChild(ball);
+
+		ball.style.zInedx = 1000;
+
+			 // передвинуть мяч под координаты курсора
+ 				 // и сдвинуть на половину ширины/высоты для центрировани
+		function moveAt(e)
+		{
+			ball.style.left = e.pageX - ball.offsetWidth / 2 + "px";
+			ball.style.top = e.pageY - ball.offsetHeight / 2 + "px";
+		} 
+
+		document.onmousemove = function(e)
+		{
+			moveAt(e);
+		}
+		// 4. отследить окончание перенос
+		ball.onmouseup = function()
+		{
+			document.onmousemove = null;
+			ball.onmouseup = null;	
+		}
+	}
+</script>
+</body>
+</html>									

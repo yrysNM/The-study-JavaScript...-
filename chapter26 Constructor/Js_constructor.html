@@ -1,0 +1,30 @@
+<script>
+	function Animal(name) //big word if function constructor
+	{
+		this.name = name;
+		this.canWalk = true;
+	}
+
+	var animal = new Animal("Dog");
+
+
+	function User(name)
+	{
+		this.name = name;
+
+		this.sayHi =  function()
+		{
+			alert("My name: " + this.name);
+		};
+	}
+
+	var ivan = new User("Ivan");
+
+	ivan.sayHi(); //My name Ivan
+
+/*	ivan = {
+		name: "Inva",
+		sayHi: function
+	};*/
+
+</script>

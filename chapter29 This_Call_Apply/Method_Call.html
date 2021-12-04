@@ -1,0 +1,26 @@
+<script>
+	function showFullName()
+	{
+		alert(this.firstName + " " + this.lastName);
+	}
+
+	var user = {
+		firstName: "VAsilly",
+		lastName: "Petrov",
+		patronym: "Ivanovich"
+	};
+
+	function showFullName_Cons(firstPart, lastPart)
+	{
+		alert(this[firstPart] + " " + this[lastPart]);
+	}
+
+	// f.call(контекст, аргумент1, аргумент2, ...)
+	showFullName_Cons.call(user, "firstName", "lastName"); //VAsilly Petrov
+	showFullName_Cons.call(user, "firstName", "patronym"); //VAsilly Ivanovich
+
+	// функция вызовется с this=user
+	showFullName.call(user); //VAsilly Petrov
+
+
+</script>

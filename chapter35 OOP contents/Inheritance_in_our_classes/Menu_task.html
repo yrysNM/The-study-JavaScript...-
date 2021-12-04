@@ -1,0 +1,61 @@
+<script type="text/javascript" src = "js/Menu.js"></script>
+
+<script type="text/javascript">
+	function AnimatingMenu()
+	{
+		Menu.apply(this, arguments);
+	}
+
+	AnimatingMenu.prototype = Object.create(Menu.prototype);
+
+	AnimatingMenu.prototype.STATE_ANIMATING = 2;
+	
+	AnimatingMenu.prototype.open = function() 
+	{
+		var self = this;
+
+		this._state = this.STATE_ANIMATING;
+
+		this._timer = setTimeout(function()
+		{
+			Menu.prototype.open.call(self);
+		}, 1000);
+	};
+
+	AnimatingMenu.prototype.close = function()
+	{
+		clearTimeout(this._timer);
+		Menu.prototype.close.apply(this);
+	};
+
+	AnimatingMenu.prototype._stateAsString = function() 
+	{
+		switch(this._state)
+		{
+			case this.STATE_ANIMATING:
+				return "animation";
+			
+			default: 
+				return Menu.prototype._stateAsString.call(this);
+
+		}
+
+	};
+
+	//test, use
+	var menu = new AnimatingMenu();
+
+	menu.showState(); //close
+
+	menu.open(); 
+	menu.showState(); //animaiton
+
+	setTimeout(function() // 1s
+	{
+		menu.showState(); //open
+
+		menu.close();
+		menu.showState(); //close
+	}, 1000);
+
+</script>

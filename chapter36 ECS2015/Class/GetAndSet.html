@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	"use strict";
+
+	class User
+	{
+		constructor(firstName, lastName)
+		{
+			this.firstName = firstName;
+			this.lastName = lastName; 
+		}
+
+		//getter
+		get fullName()
+		{
+			return `${this.firstName} ${this.lastName}`;
+		}
+
+		//setter
+		set fullName(newValue)
+		{
+			[this.firstName, this.lastName] = newValue.split(" ");
+		}
+
+		// вычисляемое название метода
+		["test".toUpperCase()]()
+		{
+			alert("PASSED"); 
+		}
+	};
+
+	let user = new User("Tony", "Garfeild");
+	alert(user.fullName);
+	
+	user.fullName  = "Tony Stark";
+	alert(user.fullName);
+
+	user.TEST();
+</script>

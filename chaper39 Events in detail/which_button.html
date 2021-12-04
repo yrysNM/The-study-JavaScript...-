@@ -1,0 +1,10 @@
+<script type="text/javascript">
+  function fixWhich(e) {
+  if (!e.which && e.button) { // если which нет, но есть button... (IE8‐)
+    if (e.button & 1) e.which = 1; // левая кнопка
+    else if (e.button & 4) e.which = 2; // средняя кнопка
+    else if (e.button & 2) e.which = 3; // правая кнопка
+  }
+}
+
+</script>

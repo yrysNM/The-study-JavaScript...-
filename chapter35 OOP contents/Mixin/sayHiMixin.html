@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	//mixin
+	var sayHiMixin = {
+		sayHi: function()
+		{
+			alert("Hi " +  this.name);
+		},
+
+		sayBye: function()
+		{
+			alert("Bye " + this.name);
+		}
+	};
+
+	//user 
+	function User(name) {
+		this.name = name;
+	}
+
+	// передать методы примеси
+	for(var key in sayHiMixin) User.prototype[key] = sayHiMixin[key];
+
+
+	//User used sayHi
+new User("Vasya").sayHi(); //Hi avys
+
+
+</script>

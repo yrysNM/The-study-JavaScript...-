@@ -1,0 +1,22 @@
+<style>
+	.alert
+	{
+		padding:  15px;
+		border:  1px solid #d6e9c6;
+		border-radius:  4px;
+		color:  #3c763d;
+		background-color:  #dff0d8;
+
+	}
+</style>
+
+<div class = "alert">
+	<strong>Hooray!</strong>You have read this important message.
+</div>
+
+<script type="text/javascript">
+	var div = document.createElement("div");
+	div.className = "alert alert-success";
+	div.innerHTML = "<strong>Hooray!</strong>You have read this important message.";
+	document.body.appendChild(div);
+</script>

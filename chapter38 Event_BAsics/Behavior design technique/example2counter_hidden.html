@@ -1,0 +1,21 @@
+<button data-toggle-id = "subscribe-mail">
+	 Показать форму подписки
+</button>
+
+<form id = "subscribe-mail" hidden>
+	Your email:  <input type = "email"/>
+</form>
+
+<script type="text/javascript">
+	document.onclick = function(event)
+	{
+		let target = event.target;
+
+		let id = target.getAttribute("data-toggle-id");
+		if(!id) return;
+
+		let elem = document.getElementById(id);
+
+		elem.hidden = !elem.hidden;
+	};
+</script>

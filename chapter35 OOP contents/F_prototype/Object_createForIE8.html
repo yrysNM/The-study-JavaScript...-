@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	function inherit(proto)
+	{
+		function F()
+		{
+
+		}
+
+		F.prototype = proto;
+
+		var object = new F;
+		return object;
+	}
+
+	var animal = {
+		eats: true
+	};
+
+	var rabbit = inherit(animal);
+
+	alert(rabbit.eats); // true
+</script>

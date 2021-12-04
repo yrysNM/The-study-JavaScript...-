@@ -1,0 +1,49 @@
+<script type="text/javascript">
+	var numbers = "[0, 1, 2, 3]";
+
+	numbers = JSON.parse(numbers);
+
+	alert(numbers[1]); //1
+
+	var user = '{ "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+
+
+	user = JSON.parse(user);
+
+	alert(user.friends[1]); ///1
+	alert(user.name);
+
+	//title: name proper, date: date propr
+
+	// var str = '{"title":"Конференция","date":"2014‐11‐30T12:00:00.000Z"}';
+
+	// var event = JSON.parse(str); //not object date 
+
+	//alert(event.date.getDate()); //OOps error
+
+	// solution
+	// дата в строке ‐ в формате UTC
+	var str = '{"title":"Конференция","date":"2014‐11‐30T12:00:00.000Z"}';
+
+	var event = JSON.parse(str, function(key, value) {
+	  if (key == 'date') return new Date(value);
+	  return value;
+	});
+
+	alert( event.date.getDate() ); // теперь сработает!
+
+	var schedule = '{ \
+  "events": [ \
+    {"title":"Конференция","date":"2014‐11‐30T12:00:00.000Z"}, \
+    {"title":"День рождения","date":"2015‐04‐18T12:00:00.000Z"} \
+  ]\
+}';
+
+	schedule = JSON.parse(schedule, function(key, value) {
+	  if (key == 'date') return new Date(value);
+	  return value;
+	});
+console.log( schedule.events[1].date.getDate() ); // сработает!
+
+
+</script>

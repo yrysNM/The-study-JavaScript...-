@@ -1,0 +1,31 @@
+<script>
+	var arr = ['a', 'b'];	
+
+	arr.push(function()
+	{
+		alert(this);
+	})
+
+	arr[2]();
+
+	var user = {
+		firstName: "Arsen",
+
+		export: this
+	};
+
+	alert(user.export.firstName);
+
+	var user = "";
+
+	var user2 = {
+		name: "Yrsy",
+
+		export: function() 
+		{
+			return this; 
+		}
+	}; 
+
+	alert(user2.export().name);
+</script>

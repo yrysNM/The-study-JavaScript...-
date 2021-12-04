@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	"use strict";
+
+	class User
+	{
+		constructor(name)
+		{
+			this.name = name;
+		}
+
+		sayHi()
+		{
+			alert(this.name);
+		}
+	}
+
+	let user = new User("Vasya");
+	user.sayHi();
+
+
+	//it is like here 
+	function User_proto(name)
+	{
+		this.name = name;
+	}
+
+	User_proto.prototype.sayHi = function()
+	{
+		alert(this.name); 
+	};
+
+ 	let just = new User_proto("Charli");
+ 	just.sayHi();
+</script>

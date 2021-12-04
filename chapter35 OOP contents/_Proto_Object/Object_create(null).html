@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	var  data = {};
+	data.text = "Hello"; 
+	data.age = 15;
+
+	alert(data.hasOwnProperty("toString") ? data.toString : undefined);
+
+	//However there is an easier way:
+	data = Object.create(null);
+	data.text = "Hi";
+	
+	alert(data.text);
+	alert(data.toString);
+</script>

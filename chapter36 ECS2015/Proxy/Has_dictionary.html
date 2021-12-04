@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	"use strict";
+
+	let dictionary = {
+		"Hello": "Privet"
+	};
+
+	dictionary = new Proxy(dictionary,{
+		has(target, phrase)
+		{
+			return true;
+		}
+	});
+
+	alert("BlaBlaBla" in dictionary); // true
+</script>

@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	function httpGet(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function() {
+      if (this.status == 200) {
+        resolve(this.response);
+      } else {
+        var error = new Error(this.statusText);
+        error.code = this.status;
+        reject(error);
+      }
+    };
+    xhr.onerror = function() {
+      reject(new Error("Network Error"));
+    };
+    xhr.send();
+  });
+}
+
+"use strict";
+
+httpGet("js/json/user.json")
+	.then(JSON.parse)
+	.then(user => loadUrl(`https://api.github.com/users/${user.name}`))
+	.then(
+		JSON.parse,
+		function githubError(error)
+		{
+			if(error.code == 404)
+			{
+				return {name: "NoGitHub", avatar_url: "image/ok.png"};
+
+			}else
+			{
+				throw error;
+			}
+	})
+	.then(function showAvatar(githubUser)
+	{
+		let image = new Image();
+		img.src = githubUser.avatar_url;
+		img.className = "promise-avatar-example";
+		document.body.appendChild(img);
+		setTimeout(() => img.remove(), 3000);
+	})
+	.catch(function genericError(error)
+	{
+		alert(error); //Error: Not found;s
+	});
+
+</script>

@@ -1,0 +1,51 @@
+<script>
+	
+	//Loss of context example
+	var user = {
+		firstName: "Vasya",
+		sayHi: function() 
+		{
+			alert(this.firstName);
+		}
+	};
+
+	setTimeout(user.sayHi, 1000) // undefined (not vasya) 1000ms - 1s
+
+	//solution number1
+	//Самый простой вариант решения – это обернуть вызов в анонимную функцию:
+	var user_sol = {
+		firstName: "VAsya",
+
+		sayHi: function(who)
+		{
+			alert(this.firstName + ": Hello " + who);
+		}
+	};
+
+	setTimeout(function() //Самый простой вариант решения – это обернуть вызов в анонимную функцию
+	{
+		user_sol.sayHi("Petya"); //Vasya
+	},1000); //we have whole 1s it is problem
+
+
+	//solution 2 
+	// Напишем вспомогательную функцию bind(func, context) , которая будет жёстко фиксировать контекст для func :
+	function bind(func, context)
+	{
+		return function() {
+			return func.apply(context, arguments);
+		};
+	}
+
+	var user_Bind = {
+		firstName: "Vasya",
+		sayHi: function()
+		{
+			alert(this.firstName);
+		}
+	};
+
+	setTimeout(bind(user.sayHi, user), 1000);
+
+	
+</script>

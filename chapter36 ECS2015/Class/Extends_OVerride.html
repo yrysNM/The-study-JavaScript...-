@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	"use strict";
+
+	class Animal
+	{
+
+		constructor(name)
+		{
+			this.name = name;
+		}
+
+		walk()
+		{
+			alert("I walk " + this.name);
+		}
+	};
+
+	class Rabbit extends Animal
+	{
+		walk()
+		{
+			super.walk();
+			alert("...and jumping");
+		}
+	};
+
+	new Rabbit("VAsya").walk();
+	
+</script>

@@ -1,0 +1,45 @@
+<script>
+	say("Vasya");
+
+	var phrase = "Hello ";
+
+	function say(name){
+		alert(name + " " + phrase);
+	}
+
+	var value = 0;
+
+	function f()
+	{
+		if(1)
+		{
+			value = true;
+		}else 
+		{
+			var value = false;
+		}
+
+		alert(value);
+	}
+
+	f();
+
+
+	function test()
+	{
+		alert(window);
+
+		var window = 5; 
+
+		alert(window);
+	}
+
+	test();
+
+
+	var a = 5;
+	
+	(function() {
+		alert(a)
+	})()
+</script>

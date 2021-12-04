@@ -1,0 +1,17 @@
+<script type="text/javascript">
+		function Rabbit()
+		{}
+
+		Rabbit.prototype = {
+			constructor: Rabbit
+		};
+
+			
+	// в Rabbit.prototype есть одно свойство: constructor
+		alert(Object.getOwnPropertyNames(Rabbit.prototype)); //constructor
+
+		//it is eqval to Rabbit 
+		alert(Rabbit.prototype.constructor  == Rabbit); //true
+
+
+</script>

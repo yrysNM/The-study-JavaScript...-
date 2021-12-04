@@ -1,0 +1,24 @@
+<script type="text/javascript">
+	var user = {
+		firstName: "Vasya",
+		surname: "Petrov",
+
+		get fullName()
+		{
+			return this.firstName + ' ' + this.surname;
+		},
+
+		set fullName(value)
+		{
+			var split = value.split(" ");
+			this.firstName = split[0];
+			this.surname = split[1]; 
+		}
+	};
+
+	alert(user.fullName); //vasya Petrov (form getter)
+
+	user.fullName = "Petia Ivanov";
+	alert(user.firstName); //setter Petia
+	alert(user.surname); ////setter Ivanov
+</script>

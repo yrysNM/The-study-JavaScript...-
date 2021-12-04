@@ -1,0 +1,18 @@
+<body class = "main page">
+	<script type="text/javascript">
+		let classList = document.body.classList;
+
+		classList.remove("page"); //delete class
+		classList.add("post"); //plus or add post
+
+		for(let i = 0;  i < classList.length; i++)
+		{
+			alert(classList[i]); //main, post
+		}
+
+		alert(classList.contains("post")); //check about class
+		alert(document.body.className); //main  post, works too
+
+	</script>
+		
+</body>

@@ -1,0 +1,23 @@
+<script>
+
+    //функция сравнения
+    function compareAge(personA, personB )
+    {
+        return personA.age - personB.age;
+    }
+
+    //checker
+    var vasya = {name: "Вася", age: 23};
+    var masha = {name: "Маша", age: 18};
+    var misha = {name: "Миша", age: 6};
+
+    var people = [vasya, masha, misha];
+
+    people.sort(compareAge);
+
+    for(var i = 0; i < people.length; i++)
+    {
+        alert(people[i].name); //Миша Маша Вася
+    }
+
+</script>

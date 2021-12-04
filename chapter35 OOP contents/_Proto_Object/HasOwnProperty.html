@@ -1,0 +1,32 @@
+<script type="text/javascript">
+	var animal = {
+		eats: true
+	};
+
+	var rabbit = {
+		jumps: true,
+		__proto__: animal
+	}; 
+
+	alert(rabbit.hasOwnProperty("jumps")); //true: jumps принадлежит rabbit
+
+	alert(rabbit.hasOwnProperty("eats")); // false: eats не принадлежит
+
+
+	//Для того, чтобы перебрать свойства самого объекта, достаточно профильтровать key через hasOwnProperty 
+
+	var animal_fil = {
+		eats: true
+	};
+
+	var rabbit_fil = {
+		jumps: true,
+		__proto__: animal
+	};
+
+	for(var key in rabbit_fil)
+	{
+		if(!rabbit_fil.hasOwnProperty(key)) continue; // пропустить "не свои" свойства
+		alert(key + " = " + rabbit[key]);  // выводит только "jumps"
+	}
+</script>

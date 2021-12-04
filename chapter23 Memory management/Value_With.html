@@ -1,0 +1,38 @@
+<script>
+	var a= 5;
+
+	var obj = 
+	{
+		a: 10
+	};
+
+	with(obj)
+	{
+		alert(a); //10 from window
+	}
+
+	var b= 5;
+
+	with(obj)
+	{
+		alert(b); // 1 form window
+	}
+
+	var obj_size = 
+	{
+		weight: 10,
+		size: 
+		{
+			width: 5,
+			heigth: 7
+		}
+	};
+
+	with(ovj_size)
+	{
+		with(size)
+		{
+			alert(width * height / weight); //// width,height из size, weight из obj
+		}
+	}
+</script>

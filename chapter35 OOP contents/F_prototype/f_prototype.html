@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+	//don;t work IE10
+	var animal = {
+		eats: true
+	};
+
+	function Rabbit(name)
+	{
+		this.name = name;
+		this.__proto__ = animal;
+
+	}
+
+	var rabbit = new Rabbit("Кроль!");
+
+	alert(rabbit.eats); //true from prototype
+
+
+	//next example work all platform
+	var animal_2 = {
+		eats: true
+	};
+
+	function Rabbit2(name)
+	{
+		this.name = name;
+	}
+
+	Rabbit2.prototype = animal_2;
+
+	var rabbit2 = new Rabbit2("Кроль "); //rabbit__proto__ = animal
+
+	alert(rabbit2.eats);
+
+</script>

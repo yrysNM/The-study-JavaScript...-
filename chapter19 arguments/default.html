@@ -1,0 +1,29 @@
+<script>
+    function showWarning(options)
+    {
+        let width = options.width || 200;
+        var height = options.height || 100; //default value
+        var contents = options.contents || "Waring";
+
+        return (`${width}, ${height}, ${contents}`);
+    }
+
+    showWarning({
+        contents: "Вы вызвали функцию" 
+    });
+
+    alert(showWarning()); //this is with function 
+
+
+    var opts = {
+        width: 400,
+        height: 200,
+        contents: "TExt"
+    };
+
+    showWarning(opts);
+
+    opts.contents = "OTher text";
+
+    alert(showWarning(opts)); //
+</script>

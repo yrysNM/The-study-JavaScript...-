@@ -1,0 +1,25 @@
+<script type="text/javascript">
+	"use strict";
+
+	//str восстанавливает строку
+	function str(strings, ...values)
+	{
+		let str = "";
+		for(let i = 0; i < values.length; i++)
+		{
+			str += strings[i];
+			str += values[i];
+		}
+
+		//last  part string
+		str += strings[strings.length - 1];
+		
+		return str;
+	}
+
+	let apples = 3;
+	let oranges = 5;
+
+	//sum of 3  + 5 = 8!
+	alert(str`Sum of ${apples} + ${oranges} = ${apples + oranges}!`); 
+</script>

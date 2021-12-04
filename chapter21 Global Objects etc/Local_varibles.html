@@ -1,0 +1,53 @@
+<script>
+	function makeCounter()
+	{
+		var currrentCount = 1; 
+
+		return function() {
+			return currrentCount++;
+		};
+	}
+
+	var counter = makeCounter();
+
+	// каждый вызов возвращает результат, увеличивая счётчи
+	alert(counter()); //1
+	alert(counter()); //2
+	alert(counter()); //3...
+
+	//object counter
+
+	function makeCounter_Object()
+	{
+		var currrentCount = 1;
+
+		return {
+
+			getNext: function()
+			{
+				return currrentCount++;
+			},
+
+			set: function(value)
+			{
+				currrentCount = value;
+			},
+
+			reset: function()
+			{
+				currrentCount = 1;
+			}
+		};
+	}
+
+	var counter_obj = makeCounter_Object();
+
+	alert(counter_obj.getNext() ); //1
+	alert(counter_obj.getNext() ); //2
+
+
+	counter_obj.set(5);
+	alert(counter_obj.getNext() ); //5
+
+	alert(counter_obj.getNext());
+</script>

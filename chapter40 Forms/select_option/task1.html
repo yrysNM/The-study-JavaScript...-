@@ -1,0 +1,20 @@
+<select>
+	<option value = "Rock">Rock</option>
+	<option value = "Blues" selected>Blues</option>
+</select>
+
+<script type="text/javascript">
+	var select = document.body.children[0];
+
+	//1)
+	var selectedOption = select.options[select.selectedIndex];
+
+
+	alert(selectedOption.value);
+
+	//2)
+	var newOption = new Option("Classic", "Classis music");
+	select.appendChild(newOption);
+
+	 newOption.selected = true;
+</script>

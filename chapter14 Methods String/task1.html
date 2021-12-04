@@ -1,0 +1,30 @@
+<script>
+    function checkSpam(str)
+    {
+        var lowerStr = str.toLowerCase();
+
+        return( !!(~lowerStr.indexOf("viagra") || ~lowerStr.indexOf("xxx")));        
+    }
+
+    console.log(checkSpam('buy ViAgRA now')); //true
+    console.log(checkSpam('free xxxxx')) // == true
+    console.log(checkSpam("innocent rabbit")); // == false
+
+    function checkText(t)
+    {
+        var lowerT = t.toLowerCase();
+
+        if(!(~lowerT.indexOf("viagra") ||
+            ~lowerT.indexOf("xxx")))
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    alert(checkText("buy ViAgRA now")); //true
+    alert(checkText('free xxxxx'));
+    alert(checkText("innocent rabbit"));
+
+</script>

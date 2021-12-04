@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	function showList()
+	{
+		alert([].join.call(arguments, " - "));
+
+	}
+
+	showList("VAsya", "Pasha", "Masha"); //VAsya - Pasha - Masha]
+
+	//join in Array.prototype place
+	function showList2()
+	{
+		aler(Array.prototype.join.call(arguments, " - "));
+	}
+
+	showList("Вася", "Паша", "Маша"); // Вася ‐ Паша ‐ Маша
+</script>

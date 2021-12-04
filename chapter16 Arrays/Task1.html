@@ -1,0 +1,14 @@
+<script>
+    var arr = ["Apple", "Orange", "BAnana", "Limon"];
+
+    alert(rand(arr));
+
+    function rand(arr)
+    {
+        var min = 0, max = 4;
+        var rand = min + Math.floor(Math.random() * (max  + 1 - 1))
+        
+        return arr[rand];
+    
+    }
+</script>

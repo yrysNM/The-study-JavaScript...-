@@ -1,0 +1,32 @@
+<script>
+	function sumTo(n)
+	{
+		var result = 0;
+		for(let i = 0; i <= n; i++) //simple loop 1+2..+n
+		{
+			result += i;
+		}
+
+		return result;
+	}
+
+	function sumToRec(n) //// рекурсия sumToRec(n) = n+SumToRec(n‐1)
+	{
+		return n == 1 ? 1 : n + sumToRec(n - 1);
+	}
+
+	var timeLoop= performance.now();
+
+	for(let i = 1; i < 1000; i++) sumTo(1000); //loop
+
+	timeLoop =performance.now() - timeLoop;
+
+	var timeRecursion  = performance.now();
+
+	for(let i = 0 ; i < 1000; i++) sumToRec(1000); //рекурсия
+
+	timeRecursion = performance.now() - timeRecursion;
+
+	alert("Difference " + (timeRecursion / timeLoop) + " once");
+
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- task5</title>
+
+	<link href = "css/style.css" rel = "stylesheet" />
+	<script type="text/javascript" src = "js/voter.js"></script>
+</head>
+<body>
+	<div id = "voter" class = "voter">
+		<span class = "down">-</span>
+		<span class = "vote">0</span>
+		<span class = "up">+</span>
+	</div>
+
+	<script type="text/javascript">
+		let voter = new Voter({
+			elem: document.getElementById("voter")
+		});
+	</script>
+</body>
+</html>

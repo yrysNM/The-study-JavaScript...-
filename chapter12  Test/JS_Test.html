@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS -- Tests</title>
+
+    <!-- add mocha css, to show results -->
+    <link href = "https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css" rel = "stylesheet" />
+
+    <!-- add mocha framework code -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+
+    <script>
+        //enable bdd-style testing
+        mocha.setup("bdd");
+    </script>
+
+    <!-- add chai -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+    <script>
+        // chai has a lot of stuff, lets make assert global
+        let assert = chai.assert;
+    </script>
+</head>
+<body>
+    <script>
+        function pow(x, n)
+        {
+
+
+            // return 8;
+            let result = 1; 
+
+            for(let i = 0; i < n; i++)
+            {
+                result *= x;
+            }
+
+            return result;
+        }
+    </script>
+
+    <!-- the script with tests (describe, it...) -->
+    <script src = "js/test.js"></script>
+    <script src = "js/test2.js"></script>
+
+    <!-- the element with id = "mocha" will contain test results -->
+    <div id = "mocha"></div>
+
+    <!-- run test -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>

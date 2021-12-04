@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function printNumbersInterval()
+	{
+		var i = 1;
+		var timerId = setInterval(function()
+		{
+				console.log(i);
+				if(i == 20) clearInterval(timerId);
+				i++;	
+		}, 100);
+	}
+
+	printNumbersInterval();
+
+	function printNumbersTimeOut20_100()
+	{
+		var i  = 1;
+		var timeId = setTimout(function go()
+		{
+			console.log(i);
+			if(i < 20) setTimout(go, 100);
+			i++;
+		}, 100);
+	}
+
+	printNumbersTimeOut20_100();
+
+
+</script>

@@ -1,0 +1,57 @@
+<script>
+    var obj = {
+        name: "open menu"
+    }; 
+
+   // removeClass(obj, 'menu');
+    removeClass(obj, 'open'); // obj.className='menu'
+   // removeClass(obj, 'blabla'); // без изменений (нет такого класса)
+    alert( obj.name ); // 'menu'
+
+
+    function removeClass(obj, cls)
+    {
+        var classes = obj.name ? obj.name.split(" ") : [];
+
+        for(var i = 0; i < classes.length; i++)
+        {
+            if(classes[i] == cls) 
+            {
+                 delete classes[i];
+                 obj.name = classes.join(" ");
+            }
+        }
+
+        //obj.name = classes.join(" ");
+        
+    }
+
+    //best function 🤔
+
+    function removeClass2(obj2, class_f)
+    {
+        var classes = obj2.className.split(" ");
+
+        for(var i = 0; i < classes.length; i++)
+        {
+            if(classes[i] == class_f)
+            {
+                classes.splice(i, 1); //remove class
+                i--;  //  check every element;
+            }
+        }
+
+        obj2.className = classes.join(" ");
+    }
+
+    var obj2 = {
+        className: "open menu menu"
+    };
+
+    removeClass2(obj2, 'blabla');
+    removeClass2(obj2, 'menu');
+    removeClass2(obj2, 'open'); // obj.className='menu'
+    removeClass2(obj2, 'blabla'); // без изменений (нет такого класса)
+    alert(obj2.className); // open
+
+</script>

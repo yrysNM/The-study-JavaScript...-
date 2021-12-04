@@ -1,0 +1,65 @@
+<script type="text/javascript">
+	function CoffeeMachine(power)
+	{
+		var waterAmount = 0;
+
+		var WATER_HEAT_CAPACITY = 4200;
+
+		function getTimeToBoil()
+		{
+			return waterAmount * WATER_HEAT_CAPACITY * 80 / power;
+		}
+
+		this.run = function()
+		{
+			setTimeout(function()
+				{
+					alert("Coffe done");
+				}, getTimeToBoil());
+		};
+
+		this.setWaterAmount= function(amount)
+		{
+			waterAmount = amount; 
+		};
+	}
+
+	var coffeeMachine = new CoffeeMachine(10000);
+	coffeeMachine.setWaterAmount(50);
+	coffeeMachine.run();
+
+
+	//prototype all methos
+	function CoffeMachine_prop(power)
+	{
+		this._power = power; 
+		this._waterAmount = 0;
+	}
+
+	// свойства и методы для всех объектов класса
+	CoffeMachine_prop.prototype.WATER_HEAT_CAPACITY_PROP = 4200;
+
+
+	CoffeMachine_prop.prototype._getTimeToBoil_prop = function()
+	{
+		return this._waterAmount * this.WATER_HEAT_CAPACITY_PROP * 80 / this._power
+	};
+
+	CoffeMachine_prop.prototype.setWaterAmount_Prop = function(amount_prop)
+	{
+		this._waterAmount = amount_prop; 
+	};
+
+	CoffeMachine_prop.prototype.run = function() 
+	{
+		setTimeout(function()
+		{
+			alert("COffee done!");
+		}, this._getTimeToBoil_prop());
+	};
+
+	var coffeeMachine_Prop = new CoffeMachine_prop(10000);
+	coffeeMachine_Prop.setWaterAmount_Prop(50);
+	coffeeMachine_Prop.run();
+
+</script>

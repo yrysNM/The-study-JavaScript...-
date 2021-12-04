@@ -1,0 +1,24 @@
+<ul>
+	<li>1</li>
+	<li>2</li>
+</ul>
+
+
+<script type="text/javascript">
+	//solution 1
+	/*let ul = document.body.children[0];
+	let li2 = ul.children[1];
+
+	li2.insertAdjacentHTML("afterEnd", "<li>3</li><li>4</li><li>5</li>");*/
+
+	var ul = document.body.children[0];
+	ul.insertAdjacentHTML("beforeEnd", "<li>3</li><li>4</li><li>5</li>");
+
+</script>
+
+<!-- <script type="text/javascript">
+	let ul = document.body.children[0];
+	let li5 = ul.children[2];
+
+	li5.insertAdjacentHTML("beforeBegin", "<li>3</li><li>4</li>");
+</script> -->

@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	function Machine(power)
+	{
+		this._power = power;
+
+		this._enabled = false;
+
+		this.enable = function()
+		{
+			this._enabled = true;
+		};
+
+		this.disable = function()
+		{
+			this._enable = false;
+		};
+	}
+
+	function CoffeeMachine(power)
+	{
+		Machine.apply(this, arguments);
+
+		alert(this._enabled); //false
+		alert(this._power); //10000
+	}
+
+	var coffeeMachine = new CoffeeMachine(10000);
+</script>

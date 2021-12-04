@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- TABLE THREAD TFOOT TBODY</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>one</td> <td> two </td>
+		</tr>
+
+		<tr>
+			<td>three</td> <td>four</td>
+ 		</tr>
+	</table>
+
+	<script type="text/javascript">
+		let table = document.body.children[0];
+
+		alert(table.rows[0].cells[0].innerHTML); //one
+	</script>
+</body>
+</html>

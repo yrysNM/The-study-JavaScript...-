@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- task4</title>
+
+	<style>
+		.voter
+		{
+			font-family:  Consolas, "Lucida Console", monospace;
+
+			font-size:  18px;
+		}
+
+		.up, .down
+		{
+			cursor:  pointer;
+			color:  blue;
+			font-weight:  bold;
+		}
+	</style>
+</head>
+<body>
+	<div id = "voter" class = "voter">
+		<span class = "down">-</span>
+		<span class = "vote">0</span>
+		<span class = "up">+</span>
+	</div>
+
+	<script type="text/javascript">
+		function Voter(options)
+		{
+			let elem = options.elem;
+
+			let voteElem = elem.querySelector(".vote");
+
+			elem.onclick = function(event)
+			{
+				// сам обработчик не меняет голос, он вызывает функцию
+				if(event.target.closest(".down"))
+				{
+					voteDecrease();
+
+				}else if(event.target.closest(".up"))
+				{
+					voteIncrease();
+				}
+			}
+
+			elem.onmousedown = function()
+			{
+				return false;
+			};
+
+
+			// ----------- методы -------------
+			function voteDecrease()
+			{
+				voteElem.innerHTML = +voteElem.innerHTML - 1; 
+
+			}
+
+			function voteIncrease()
+			{
+				voteElem.innerHTML = +voteElem.innerHTML + 1; 
+			}
+
+			this.setVote = function(vote)
+			{
+				voteElem.innerHTML = +vote;
+			};
+		}
+
+		let voter = new Voter({
+			elem: document.getElementById("voter")
+		});
+
+		voter.setVote(1);
+
+	</script>
+</body>
+</html>

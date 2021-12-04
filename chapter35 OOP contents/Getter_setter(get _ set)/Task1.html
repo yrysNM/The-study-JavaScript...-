@@ -1,0 +1,49 @@
+<script type="text/javascript">
+	function User()
+	{
+
+		var firstName;
+		var lastName;
+
+		this.setFirstName = function(name)
+		{
+			if(name == null)
+			{
+				throw new Error("Enter the name please");
+			}
+
+			this.firstName = name;
+
+		};
+
+		this.setLastName = function(surname)
+		{
+			if(surname == null)
+			{
+				throw new Error("Enter the surname please: ");
+			}
+
+			this.lastName = surname;
+		}
+
+		this.getFullName = function()
+		{
+			return (this.firstName + " " + this.lastName);
+		}
+
+		this.getFirstName = function()
+		{
+			return this.firstName;
+		}; 
+	}
+
+	var user = new User();
+
+
+	user.setFirstName("Petia");
+	user.setLastName("Ivanov");
+
+	alert(user.getFullName());
+
+
+</script>

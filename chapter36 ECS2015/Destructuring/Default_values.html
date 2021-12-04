@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	'use strict';
+
+		let[a, b] = []; 
+		alert(a); //undefined
+
+
+	// значения по умолчанию
+	let[firstName = "Quest", lastName = "Anonim"] = [];
+
+	alert(firstName); //Quest 
+	alert(lastName);	//Anonim
+
+
+	//function destructing
+
+	function defaultLastName()
+	{
+		return Date.now() +  " - visitor";
+	}
+
+	//// lastName получит значение, соответствующее текущей дате:
+	let[name, surName = defaultLastName()] = ["Vasya"];
+
+	alert(name); //Vasya
+	alert(surName); //61..
+</script>

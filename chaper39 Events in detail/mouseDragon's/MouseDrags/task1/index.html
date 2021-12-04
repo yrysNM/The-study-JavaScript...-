@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>js -- task1</title>
+
+	<link href = "css/style.css" rel = "stylesheet" type = "text/css" />
+</head>
+<body>
+	<div id = "slider" class = "slider">
+		<div class = "thumb"></div>
+	</div>
+
+	<script type="text/javascript">
+		let sliderElem = document.getElementById("slider");
+
+		let thumbElem = sliderElem.children[0];
+
+		thumbElem.onmousedown = function(e)
+		{
+			let thumbCoords = getCoords(thumbElem);
+			let shiftX = e.pageX - thumbCoords.left;
+			      // shiftY здесь не нужен, слайдер двигается только по горизонтали
+
+			let sliderCoords = getCoords(sliderElem);
+
+			document.onmousemove = function(e)
+			{
+				//  вычесть координату родителя, т.к. position: relative
+				let newLeft = e.pageX - shiftX - sliderCoords.left;
+
+				//check cursor
+				if(newLeft < 0)
+				{
+					newLeft = 0;
+				}
+
+				let rightEdge = sliderElem.offsetWidth -  thumbElem.offsetWidth;
+				if(newLeft > rightEdge)
+				{
+					newLeft = rightEdge;
+				}
+
+				thumbElem.style.left = newLeft + "px";
+			}
+
+			document.onmouseup = function()
+			{
+				document.onmousemove = document.onmouseup = null;
+			};
+
+			return false; //disable selection start(cursor  change)
+
+		};
+
+		thumbElem.ondragstart = function()
+		{
+			return false;
+		};
+
+		function getCoords(elem)
+		{
+			let box = elem.getBoundingClientRect();
+
+			 return {
+		        top: box.top + pageYOffset,
+		        left: box.left + pageXOffset
+		      };
+		}
+
+	</script>
+</body>
+</html>

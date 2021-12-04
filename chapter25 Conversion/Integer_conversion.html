@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	var room = {
+		number: 777,
+
+		valueOf: function() {return this.number;},
+
+		toString: function() {return this.number;}
+	}; 
+
+	alert(+room); //777, return valueOf
+
+	delete room.valueOf; // remove valueOf
+
+	alert(+room); // 777, toString();
+</script>

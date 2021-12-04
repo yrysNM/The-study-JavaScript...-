@@ -1,0 +1,73 @@
+<script>
+	//simple example
+	var str = String.fromCharCode(65);
+	alert(str);//A
+
+	//few hard example
+	function User(userData)
+	{
+		if(userData) // если указаны данные ‐‐ одна ветка if
+		{ 
+			this.name = userData.name;
+			this.age = userData.age;
+		}else { // если не указаны ‐‐ другая	
+
+			this.name = "Anonim"; 
+		}
+
+		this.sayHi = function()
+		{
+			alert(this.name);
+		};
+
+	}
+
+
+	var quest = new User();
+	quest.sayHi(); //Anonim
+
+	var knowUser = new User({
+		name: "VAsya",
+		age: 25
+	});
+
+	knowUser.sayHi();
+
+	//now Factory method will create UserCreateFromData User.createAnonymous
+
+	function User2()
+	{
+		this.sayHi = function()
+		{
+			alert(this.name);
+		};
+	}
+
+	User2.createAnonymous = function()
+	{
+		var user = new User2;
+		user.name = "Anonim";
+		return user;
+	}
+
+	User2.createFromData= function(userData)
+	{	
+		var user = new User2;
+		user.name = userData.name;
+		user.age = userData.age;
+		return user;
+	}
+
+	//use
+	var quest2 = User2.createAnonymous();
+	quest2.sayHi();
+
+	var knowUser2 = User2.createFromData({
+		name: "Vasyau",
+		age: 25
+	});
+
+	knowUser2.sayHi();
+
+
+</script>

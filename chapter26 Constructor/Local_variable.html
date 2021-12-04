@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	function User(firstName, lastName)
+	{
+		  // вспомогательная переменная
+		var phrase = "Hello";
+
+			//  вспомогательная вложенная функция
+		function getFullName()
+		{
+			return firstName + " " + lastName;
+		}
+
+
+		this.sayHi = function() {
+			alert(phrase + ", " + getFullName()); //использование
+		};
+	}
+
+	var vasya = new User("VAsya",  "Petrov");
+	vasya.sayHi(); 
+		//Объекты могут быть созданы при помощи функций‑конструкторов:
+</script>

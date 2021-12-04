@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	function* generateSequence()
+	{
+		yield 1;
+		yield 2;
+		return 3;
+	}
+
+	let generate = generateSequence();
+
+	for(let value of generate)
+	{
+		alert(value); //1 ,  2
+	}
+	/*	//. Значение 3 выведено не будет. Это потому что стандартный перебор итератора
+	игнорирует value на последнем значении, при done: true . Так что результат return в цикле for..of не выводится.*/
+
+	
+</script>

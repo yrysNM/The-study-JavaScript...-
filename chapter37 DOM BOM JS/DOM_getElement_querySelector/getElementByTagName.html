@@ -1,0 +1,30 @@
+<table id = "age-table">
+	<tr>
+		<td>How many old you? </td>
+
+		<td>
+			<label>
+				<input type = "radio" name = "age" value = "young" checked /> little 18
+			</label>
+
+			<label>
+				<input type = "radio" name = "age" value = "mature" />  from 18 to 50
+			</label>
+
+			<label>
+				<input type="radio" name="age" value = "senior" /> Senior 60
+			</label>
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	let tableElem = document.getElementById("age-table");
+	let elements = tableElem.getElementsByTagName("input");
+
+	for(let i = 0; i  < elements.length; i++)
+	{
+		let input = elements[i];
+		alert(input.value + ": "  + input.checked);
+	}
+</script>

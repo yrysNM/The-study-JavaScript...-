@@ -1,0 +1,28 @@
+<hmtl>
+	<head>
+		<meta charset = "utf-8">
+		<script type="text/javascript" src = ""https://cdn.polyfill.io/v1/polyfill.js?features=Element.prototype.append,Element.prototype.aft"></script>
+
+
+
+
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			// add element in end <body>
+			let p = document.createElement("p");
+			document.body.append(p);
+
+			let em = document.createElement("em");
+			em.append(" World");
+
+
+			// вставить в параграф текстовый и обычный узл
+			p.append("Hello", em);
+
+			   // добавить элемент после <p>
+			   p.after(document.createElement("hr"));
+		</script>
+	</body>
+</hmtl>

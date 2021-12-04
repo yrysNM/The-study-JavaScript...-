@@ -1,0 +1,38 @@
+<script>
+    var arr = [];
+
+    for(let i = 0; i < 1000; i++) arr[i] = 0;
+
+    function walkIn(arr)
+    {
+        for(let key in arr) arr[key]++;
+    }
+
+    function walkLength(arr)
+    {
+        for(let i = 0; i < arr.length; i++) arr[i]++;
+    }
+
+    function bench(f)
+    {
+        var date = new Date(); 
+        for(let i = 0; i < 10000; i++) f(arr);
+
+        return new Date() - date;
+    }
+
+    //more repeat time
+
+    var timeIn = 0, timeLength = 0;
+    for(let i = 0; i < 100; i++)
+    {
+        timeIn += bench(walkIn);
+        timeLength += bench(walkLength);
+    }
+
+    alert("TIme walkIn " + timeIn + 'ms');
+    alert("TIme walkLEngth " + timeLength + "ms");
+
+    // alert("Time walIn " + bench(walkIn) + "ms" );
+    // alert("Time walkLength " + bench(walkLength) + "ms");
+</script>

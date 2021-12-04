@@ -1,0 +1,21 @@
+<input type="button" id="button" value="Нажми меня">
+<input type="text" id="text" size="60">
+
+<script type="text/javascript">
+	button.onclick = function()
+	{
+		text.value += " -> in onclick";
+
+		setTimeout(function()
+		{
+			text.focus(); //work after onCLick
+		}, 0);
+
+		text.value += " from onclick->";
+	}; 
+
+	text.onfocus = function()
+	{
+		text.value += " !focus! ";
+	};
+</script>

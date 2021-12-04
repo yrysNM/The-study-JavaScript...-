@@ -1,0 +1,27 @@
+<body>
+	<style type = "text/css">
+		#text
+		{
+			width:  auto;
+		}
+	</style>
+
+	<div id = "text">
+		Text
+
+	</div>
+
+	<script type="text/javascript">
+		let text = document.getElementById("text");
+
+		for(let i = 0; i < text.offsetWidth ; i++)
+		{
+			 let newText = document.createElement("a");
+			 newText.innerHTML = " Text "; 
+			text.appendChild(newText );
+
+
+		}
+
+	</script>
+</body>

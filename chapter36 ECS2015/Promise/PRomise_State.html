@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	// Промис выполнится сразу же
+	var promise = new Promise((resolve, reject) => resolve(1));
+
+
+	// PromiseState = "resolved"
+	// PromiseResult = 1
+	// Добавили обработчик к выполненному промису
+
+	 // Эта функция будет вызвана автоматически
+	  // В ней можно делать любые асинхронные операции,
+	  // А когда они завершатся — нужно вызвать одно из:
+	  // resolve(результат) при успешном выполнении
+	  // reject(ошибка) при ошибке
+
+	promise.then(alert); //
+
+	//promise -- resolve
+
+	
+</script>

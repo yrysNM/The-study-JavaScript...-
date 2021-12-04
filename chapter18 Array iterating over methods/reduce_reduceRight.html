@@ -1,0 +1,21 @@
+<script>
+    var arr = [1, 2, 3, 4, 5];
+
+
+    var result = arr.reduce(function(sum, current)
+    {
+    	return sum + current;
+	}, 0); //with initialValue
+
+	alert(result); // 0+ 1 + 2 + 3 + 4 + 5 = 15;
+
+
+	//without initialValue
+	var result2 = arr.reduce(function(sum, current)
+		{
+			return sum + current;
+		});
+
+	alert(result2);
+	//Метод arr.reduceRight работает аналогично, но идёт по массиву справа‑налево.
+</script>

@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	function sayHi(who)
+	{
+		if(Array.isArray(who)) //check by array
+		{
+			who.forEach(sayHi);
+		}else if(who.forEach) //other test
+		{
+			who.forEach(sayHi);
+		}else alert("Hello " + who);
+	}
+
+	sayHi("Charli"); //simple
+	sayHi(["Sasha", "Petia"]); //array
+	sayHi(["Sasha", "Petia",  ["Masha", "Yrys"]]); //
+
+
+</script>

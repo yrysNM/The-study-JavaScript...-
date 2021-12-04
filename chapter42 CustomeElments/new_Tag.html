@@ -1,0 +1,21 @@
+<script>
+  // прототип с методами для нового элемента
+  var MyTimerProto = Object.create(HTMLElement.prototype);
+  MyTimerProto.tick = function() { // свой метод tick
+    this.innerHTML++;
+  };
+
+//regis new element in browser
+document.registerElement("my-timer", {
+	prototype: MyTimerProto
+});
+</script>
+
+<my-timer id = "timer">0</my-timer>
+
+<script type="text/javascript">
+	setInterval(function()
+	{
+		timer.innerHTML++;
+	}, 1000);
+</script>

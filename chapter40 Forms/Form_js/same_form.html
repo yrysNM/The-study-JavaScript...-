@@ -1,0 +1,16 @@
+<body>
+	<form>
+		<input type = "radio" name = "age" value = "10" />
+		<input type = "radio" name = "age" vlaue = "20" />
+
+	</form>
+
+	<script type="text/javascript">
+		var form = document.forms[0];
+
+		var elems = form.elements.age;
+
+		alert(elems[0].value); //10, first imput
+	</script>
+
+</body>

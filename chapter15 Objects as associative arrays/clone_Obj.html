@@ -1,0 +1,29 @@
+<script>
+    var user = {name: "Sasha"};
+
+    var admin = user;
+    admin.name = "Arsen";
+
+    alert(user.name); //change with cloner
+
+    //we can clone with key
+
+    var human = {
+        name: "Vasha",
+        age: 30
+    };
+
+    var clone = {}; // new obj empty
+
+    //copy every element or properties
+    for(var key in human)
+    {
+        clone[key] = user[key]; 
+    }
+
+    clone.name = "PEta"; ////change data in clone
+
+    alert(human.name); //Vasha
+    alert(clone.name); //Peta
+
+</script>

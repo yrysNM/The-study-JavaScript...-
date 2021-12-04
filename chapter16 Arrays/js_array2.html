@@ -1,0 +1,44 @@
+<script>
+
+    //mix array
+    var arr = [1, "Name", {name: "Petia" }, true];
+
+    //get object from array
+    alert(arr[2].name); //Petia 
+
+    //methods pop/puch/shift/unsift
+
+    //pop remove last  element
+    var fruits = ["Apple", "Orange", "Banana"];
+
+    alert(fruits.pop()); //remove "Banana";
+    alert(fruits); //Apple, Orange
+
+
+    //push add element in end array
+    var fruits2 = ["Apples", "Orange"];
+    fruits2.push("Banana");
+
+    alert(fruits2); //Apples,Orange,Banana
+
+
+    //shift delete element  first 
+    var fruits3 = ["Apple", "Orange", "banana"];
+    
+    alert(fruits3.shift()); //remove Aple
+    alert(fruits3);
+
+    //unshift add element in brgin array
+    var fruits4 = ["Orange", "Banana"];
+    fruits4.unshift("Apple"); 
+    
+    alert(fruits4); //Apple  Orange Banana
+
+    //Методы push и unshift могут добавлять сразу по несколько элементов
+    var foods = ["Apples"];
+    foods.push("Ornage", "Banana");
+
+    foods.unshift("Ananas", "Liman");
+
+        alert(foods); //Ananas,Liman,Apples,Ornage,Banana
+</script>

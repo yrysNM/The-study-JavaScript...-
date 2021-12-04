@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	//example number 1 
+	function User(name, age)
+	{
+		this.name = name;
+		this.age = age;
+	}
+
+	var pete = new  User("Petia", 25);
+
+	alert(pete.age); //25 //What is uder want send your birthday ?
+
+	function User(name, birthday)
+	{
+		this.name = name;
+		this. birthday = birthday; 
+	}
+
+	var pete = new User("Petia", new Date(1987, 6, 1));
+
+	//Что теперь делать со старым кодом, который выводит свойство age ? 
+
+	//solution it is get properties
+	function User_Correct(name, birthday)
+	{
+		this.name = name;
+		this.birthday = birthday;
+
+		  // age будет высчитывать возраст по birthday
+ 		Object.defineProperty(this, "age_old", {
+ 			get: function()
+ 			{
+ 				let todayYear = new Date().getFullYear();
+ 				return todayYear - this.birthday.getFullYear();
+ 			}
+ 		});
+	}
+
+	var piter = new User_Correct("Piter", new Date(1987, 6, 1));
+
+	alert(piter.birthday); //and get birthday
+	alert(piter.age_old); //or age ✔
+</script>

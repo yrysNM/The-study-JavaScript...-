@@ -1,0 +1,28 @@
+<script>
+    function calcD(a,  b , c)
+    {
+        return b * b - 4 * a * c;
+    }
+
+    var test = calcD(-4, 2 , 1);
+    alert(test);
+
+
+    function checkAge(age)
+    {
+        if(age > 18)
+        {
+            return true;
+        }else 
+            return confirm("Parents allowed? ");
+    }
+
+    var age = prompt("Age ?");
+
+    if(checkAge(age))
+    {
+        alert("WElcome");
+    }else 
+        alert("Get out");
+    
+</script>

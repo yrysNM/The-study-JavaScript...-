@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM --  children task</title>
+</head>
+<body>
+	<div>User </div>
+
+	<ul>
+		<li>Masha</li>
+		<li>Vova</li>
+	</ul>
+
+	<!-- comment -->
+
+	<script type="text/javascript">
+		let elems = document.documentElement.childNodes;
+			elems = Array.prototype.slice.call(elems);
+
+			elems.forEach(function(elem)
+			{
+				if(elem.tagName == "HEAD")
+					alert(elem.tagName);
+				if(elem.tagName == "UL")
+					alert("UL");
+
+				  
+			});
+	</script>
+</body>
+</html>

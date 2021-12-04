@@ -1,0 +1,28 @@
+<script>
+    var person = {}; // while empty
+
+    person.name = "Yrysbek";
+    person.age = 25;  //create properties with dote
+
+    alert(person.name + ": " + person.age);
+
+    delete person.age; // remove properties;
+
+
+    if("name" in person) //check properties for exist
+    {
+        alert("Properties name exists");
+    }
+
+    alert(person.lalala); // undifined not properties with key lalala;
+    alert(person.age); // undifined becouse remove properties;
+
+    var person = {
+        name: "Yrysbek"
+    };
+
+    alert(person.lalala === undefined); // true no properties
+    alert(person.name === undefined); //false have prop
+    
+
+</script>

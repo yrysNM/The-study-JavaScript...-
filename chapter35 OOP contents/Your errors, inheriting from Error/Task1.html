@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	function FormatError(message)
+	{
+		this.name = "FormatError";
+
+		this.message = message;
+
+		if(Error.captureStackTrace)
+		{
+			Error.captureStackTrace(this,this.constructor);
+		}else
+		{
+			this.stack = (new Error()).stack;
+		}
+	}
+
+	FormatError.prototype = Object.create(Error.prototype);
+	FormatError.prototype.constructor = FormatError;
+
+	//use
+	var err = new FormatError("Error format");
+
+	alert(err.message);
+	alert(err.name);
+	alert(err.stack);
+
+	alert(err instanceof SyntaxError); 
+</script>

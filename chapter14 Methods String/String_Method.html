@@ -1,0 +1,35 @@
+<script>
+    //methods
+    var str = "widget";
+
+    if(~str.indexOf("get", 0)) //То есть, проверка if ( ~str.indexOf(...) ) означает, что результат indexOf отличен от ‐1 , т.е. совпадение есть.
+    {
+        alert("Have!");
+    }
+
+
+    let text = "Hello World";
+
+    for(let i = 0; i < text.length; i++) // length it is integer line text
+    {
+        console.log(text.charAt(i)); //get Sumbol charAt();
+    } 
+
+
+    //search all sumbols in text
+    var just_text = "Ослик Иа‐Иа посмотрел на виадук"; //search 
+    var target = "Иа";
+
+    var pos = 0;
+
+    while(true)
+    {
+        var foundPos = just_text.indexOf(target, pos);
+
+        if(foundPos == -1) break;
+
+        alert(foundPos); // found in this position
+        pos = foundPos + 1;
+    }
+
+</script>

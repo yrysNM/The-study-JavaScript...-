@@ -1,0 +1,33 @@
+<style>
+	.error
+	{
+		background:  red;
+	}
+</style>
+
+<div>
+	Age: 
+	<input type = "text" id = "age" />  
+</div>
+
+<div>Name:
+	<input type = "text" />
+</div>
+
+<script type="text/javascript">
+	age.onblur = function() 
+	{
+		//number
+		if(isNaN(this.value))
+		{	
+			//show error
+			this.classList.add("error");
+			// and back focus  again
+			age.focus();
+		}else
+		{
+			this.classList.remove("error");
+			
+		}
+	};
+</script>

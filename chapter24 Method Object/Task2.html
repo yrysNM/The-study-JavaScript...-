@@ -1,0 +1,17 @@
+<script>
+	var name = "";
+
+	var user = {
+		name: "Arsen",
+
+		export: function() 
+		{
+			return 
+			{
+				value: this;
+			};
+		}
+	};
+
+	alert(user.export().value.name);
+</script>

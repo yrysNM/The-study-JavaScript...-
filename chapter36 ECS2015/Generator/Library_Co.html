@@ -1,0 +1,13 @@
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/co/4.1.0/index.min.js"></script>
+
+
+
+<script type="text/javascript">
+	co(function*()
+	{
+		let result = yield new Promise(
+			resolve =>  setTimeout(resolve, 1000 , 1));
+
+		return result; // return 1
+	}).then(alert); //1
+</script>

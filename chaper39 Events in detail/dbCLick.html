@@ -1,0 +1,31 @@
+<div ondblclick="alert('Тест')" onselectstart ="return false" onmousedown="return false">
+  Двойной клик сюда выведет "Тест", без выделения
+</div>
+
+<!-- example2 -->
+
+<ul onmousedown = "return false" onselectstart = "return false">
+      <li>Винни‐Пух</li>
+  <li>Ослик Иа</li>
+  <li>Мудрая Сова</li>
+  <li>Кролик. Просто кролик.</li>
+</ul>
+
+<!-- example3 -->
+
+<ul>
+    <li ondblclick="clearSelection()">Выделение отменяется при двойном клике.</li>
+</ul>
+
+<script type="text/javascript">
+  function clearSelection()
+  {
+      if(window.getSelection)
+      {
+        window.getSelection().removeAllRanges();
+      }else
+      {
+        document.selection.empty();
+      }
+  }
+</script>

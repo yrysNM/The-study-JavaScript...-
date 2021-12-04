@@ -1,0 +1,22 @@
+<script>
+    "use strict"
+
+    var salaries = {
+        "Vasya": 100,
+        "Petia": 300,
+        "Dasha": 250
+    };
+
+    var max = 0;
+    var maxName = "";
+    for(let i in salaries)
+    {
+       if(max < salaries[i])
+       {
+            max = salaries[i];
+            maxName = i;
+       }
+    }
+
+    alert(maxName || "not man");
+</script>

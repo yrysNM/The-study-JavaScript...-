@@ -1,0 +1,15 @@
+<h1 id = "elem">Hello by script!</h1>
+
+<script type="text/javascript">
+	document.addEventListener("hello", function(event)
+	{
+		alert("Hello");
+		event.preventDefault();
+	}, false);
+
+	let event = new Event("hello", {babbles: true, cancelable: true});
+	if(elem.dispatchEvent(event) === false)
+	{
+	  alert('Событие было отменено preventDefault');
+	}
+</script>

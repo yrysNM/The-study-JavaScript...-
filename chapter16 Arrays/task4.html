@@ -1,0 +1,25 @@
+<script>
+    var arr = [5, 4, 3, 8, 0];
+
+    alert(filterRange(arr, 3, 5));
+
+    function filterRange(arr, a, b)
+    {
+        for(var i = 0; i < arr.length; i++)
+        {
+            // if(arr[i] <== a && arr[i] <== b)
+            // {
+            //     return  arr[i];
+            // }
+            if(a <= arr[i] <= b)
+            {
+                for(let j = 0;  j< arr[i].length;  j++)
+                {
+                    return arr[j];
+                }
+            }
+        } 
+
+        return -1;
+    }
+</script>

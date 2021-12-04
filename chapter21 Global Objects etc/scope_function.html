@@ -1,0 +1,37 @@
+<script>
+	var a= 1;
+
+	function getFunc()
+	{
+		var a = 2;
+
+		var func = new Function(" ", "alert(a)");
+
+		return func;
+	}
+
+	getFunc()(); //1 , from window;
+
+	//than
+
+	var b= 1;
+	function getFunc2()
+	{
+		var b = 2;
+		var func =  function() {	alert(b); };
+
+
+		return func;
+	}
+
+	(getFunc2()(); //2 form LexicalEnvirenment function get Func;
+
+	//example
+	var sum = new Function("a, b", "return a + b");
+
+	var a = 1, b = 5;
+
+	alert(sum(a, b));
+	alert(sum(a)(b));
+
+</script>

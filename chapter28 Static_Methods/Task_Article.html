@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	
+	function Article() 
+	{
+		this.created = new Date();
+		Article.count++;
+		Article.last = this.created;
+	}
+
+	Article.count = 0;
+
+
+	Article.showStatus = function() 
+	{
+		alert("Всего: " + this.count + ", " + "Последняя: " + this.last );
+	}
+
+	new Article();
+	new  Article();
+
+	Article.showStatus();
+
+	new Article();
+
+	Article.showStatus();
+</script>

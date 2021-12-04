@@ -1,0 +1,43 @@
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/co/4.1.0/index.min.js"></script>
+
+<script type="text/javascript">
+	Object.defineProperty(window, "result", 
+	{
+		  // присвоение result=… будет выводить значение
+		  set: value  =>  alert(JSON.stringify(value))
+	});
+
+	co(function*()
+	{
+		result = yield function*() //generator
+		{
+			return 1;
+		}();
+
+		result = yield function*()  // функция‐генератор
+		{
+			return 2;
+		};
+
+		result  = yield Promise.resolve(3); //promise
+
+		result = yield function(callback) //function(callback)
+		{
+			setTimeout(() => callback(null, 4), 1000);
+		};
+
+		result = yield { //две задачи выполнит параллельно, как Promise.all
+			one: Promise.resolve(1),
+			two: function*() { return 2; }
+		};
+
+ 
+		result = yield [ // две задачи выполнит параллельно, как Promise.all
+			Promise.resolve(1),
+			function*() { return  2 }
+		];
+
+
+
+	});
+</script>

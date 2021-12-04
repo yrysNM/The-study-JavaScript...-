@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- task1 delegating</title>
+	<link href = "css/style.css" type = "text/css" rel = "stylesheet" />
+</head>
+<body>
+	<div id = "message-container">
+		<div class  = "pane" id = "">
+			<h3>Horse</h3>
+				 <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+
+				<button data-action = "remove" class = "remove-button">[X]</button>
+		</div>
+
+		 <div class="pane">
+	      <h3>Осёл</h3>
+
+	      <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+
+	      <button data-action = "remove" class="remove-button">[x]</button>
+	    </div>
+
+	    <div class="pane">
+
+	      <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+
+	      <p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют
+	        тёлками.
+	      </p>
+
+	      <button data-action = "remove" class="remove-button">[x]</button>
+	    </div>
+
+	</div>
+
+	<script type="text/javascript">
+	 	let container = document.getElementById("message-container");
+
+	 	container.onclick = function(event)
+	 	{
+	 		if(!event.target.classList.contains("remove-button")) return;
+
+	 		event.target.parentNode.hidden = !event.target.parentNode.hidden;
+	 	}
+	</script>
+
+</body>
+</html>

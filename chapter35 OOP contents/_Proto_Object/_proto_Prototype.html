@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	var animal = {
+		eats: true
+	};
+
+	var rabbit = {
+		jump: true
+	};
+
+	rabbit.__proto__= animal;
+
+	// в rabbit можно найти оба свойства
+	alert(rabbit.jump); //true
+	alert(rabbit.eats); //true
+
+	//example2
+	var animal2 = {
+		eats: true
+	};
+
+	var rabbit2 = {
+		jumps: true,
+		eats: false
+	};
+
+	rabbit2.__proto__ = animal2;
+
+	alert(rabbit2.eats); //false свойство взято из rabbit
+	alert(animal2.jumps);
+
+
+	//example3
+	var animal3 = {
+		eats: true
+	};
+
+	var rabbit3 = {
+		jump: true,
+		__proto__: animal3
+	};
+
+	for(var key in rabbit3)
+	{
+		alert(key + " = " + rabbit[key]);  //output "eats" and "jumps"
+	}
+
+
+</script>

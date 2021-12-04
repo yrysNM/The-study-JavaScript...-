@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	"use strict";
+
+	let promise = new Promise((resolve, reject) => 
+	{
+		//after 1s error first
+		setTimeout(() => reject(new Error("error")), 2000);
+		
+
+		//after 2 ready result: ignored;
+		setTimeout(() => resolve("ignored"), 2000);
+	});
+
+	promise.then(
+		result => alert("Fulfilled: " + result), //work
+		error => alert("Rejected: " + error) // dont work
+	);
+</script>

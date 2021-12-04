@@ -1,0 +1,22 @@
+<script>
+    function getDateAgo(date, days)
+    {
+        date.setDate(date.getDate() - days);
+        return date.getDate(); //don't change date becouse not have surprize
+    }
+
+    function getDateAgo2(date, days)
+    {
+        var dateCopy = new Date(date);
+
+        dateCopy.setDate(date.getDate() - days); 
+        return dateCopy.getDate();
+
+    }
+
+    var date = new Date(2015, 0 , 2);
+
+    alert(getDateAgo2(date,  1)); //1, (1 yan 2015);
+    alert(getDateAgo2(date, 2)); // 31 (31 decom 2014)
+    alert(getDateAgo2(date, 365));  //2, (2 yan 2014)
+</script>

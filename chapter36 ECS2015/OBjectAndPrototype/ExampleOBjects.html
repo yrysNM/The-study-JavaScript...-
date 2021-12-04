@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	"use strict";
+
+	let name = "Vasya";
+	let  isAdmin = true;
+
+	let user = {
+		name,
+		isAdmin
+	};
+
+	alert(JSON.stringify(user, "",  4)); 
+/*	{
+    "name": "Vasya",
+    "isAdmin": true
+	}*/
+
+	//next example2 Вычисляемые свойства
+	let propName = "firstName";
+
+	let user2 = {
+		[propName]: 'Vasya'
+	};
+
+	alert(user2.firstName); //Vasya
+
+	//example3
+
+	let a= "My ";
+	let b = "Green ";
+	let c = "Crocodil";
+
+	let user3 = {
+		[(a + b + c).toLowerCase()]: "Vasya"
+	};
+
+	alert(user3["my green crocodil"]); //Vasya
+</script>

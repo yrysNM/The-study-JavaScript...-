@@ -1,0 +1,19 @@
+<script>
+	function mul(a, b)
+	{
+		return a * b; 
+	}
+
+	// double умножает только на два
+	var double = mul.bind(null, 2); ; // контекст фиксируем null, он не используется
+
+	alert(double(3)); //6
+	alert(double(4)); //8
+	alert(double(5)); //10
+
+	var trip = mul.bind(null, 3);
+
+	alert(trip(3));
+	alert(trip(4));
+	alert(trip(5));
+</script>

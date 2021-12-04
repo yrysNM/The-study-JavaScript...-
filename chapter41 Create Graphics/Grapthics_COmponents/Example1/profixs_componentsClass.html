@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profix</title>
+</head>
+<body>
+	<div class = "dialog">
+		<h2 class = "dialog__title">Title</h2>
+		<div class = "dialog__content">
+			HTML -- elements
+		</div>
+
+		<div class = "dialog__close">Close</div>
+
+		<!-- Использование .dialog__title вместо .dialog .title гарантирует, что CSS не применится по
+ошибке к какому‑нибудь другому .title внутри диалога. -->
+	</div>
+
+	<style type = "text/css">
+		.dialog
+		{
+			background:  lightgreen;
+			border:  2px  solid lime;
+			border-radius:  10px;
+			padding:  4px;
+			position: relative;
+		}
+
+		.dialog__title
+		{
+			margin:  0;
+			font-size:  24px;
+			color:  darkgreen;
+
+		}
+
+		.dialog__content
+		{
+			padding:  10px 0 0 0;
+
+		}
+
+		.dialog__close
+		{
+			position:  absolute;
+			right:  4px;
+			top:  4px;
+			font-size:  10px;
+		}
+	</style>
+</body>
+</html>

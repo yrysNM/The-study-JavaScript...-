@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	"use strict"
+
+	function CoffeMachine(power)
+	{
+		this.waterAmount = 0;
+
+		 // физическая константа ‐ удельная теплоёмкость воды для getBoilTime
+		var WATER_HEAT_CAPACITY = 4200;
+
+
+		  // расчёт времени для кипячения
+		function getBolimTime()
+		{
+			return this.waterAmount * WATER_HEAT_CAPACITY * 80 / power; //error !
+
+		}
+
+		function onREady()
+		{
+			alert("Кофе готов!");
+		}
+
+		this.run = function()
+		{
+			setTimeout(onReady, getBoilTime());
+		};
+	}
+
+	var coffeMachine = new CoffeMachine(1000);
+	coffeMachine.waterAmount = 200;
+
+	coffeMachine.run();
+</script>

@@ -1,0 +1,32 @@
+<script>
+	function makeBuffer()
+	{
+		var text_main = " ";
+
+		function buffer(text)
+		{
+			if(arguments.length === 0)
+			{
+				return text_main;
+			}
+
+			return  text_main += text;
+		}
+
+		buffer.clear = function()
+		{
+			text_main = " ";
+		}
+
+		return buffer;
+	}
+
+	var buffer = makeBuffer();
+	buffer("Тест");
+	buffer(" тебя не съест ");
+	alert( buffer() ); // Тест тебя не съест
+	buffer.clear();
+	
+	alert( buffer() ); // ""
+
+</script>

@@ -1,0 +1,19 @@
+<script>
+	var value = "Surprize";
+
+	function f()
+	{
+		var value = "самое близкое значение";
+
+
+		function g() 
+		{
+			debugger; //console.log(value); Surprize 
+		}
+
+		return g; 
+	}
+
+	var g = f();
+	g(); 
+</script>

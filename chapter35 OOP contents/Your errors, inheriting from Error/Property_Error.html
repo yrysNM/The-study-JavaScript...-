@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function PropertyError(property)
+	{
+		Error.call(this, property);
+		this.name = "PropertyError";
+
+		this.property = property;
+		this.message = "Error in property" + property;
+
+		if(Error.captureStackTrace)
+		{
+			Error.captureStackTrace(this, PropertyError);
+		} else
+		{
+			this.stack = (new Error()).stack;
+		}
+	}
+
+	PropertyError.prototype = Object.create(Error.prototype);
+
+	//example 2
+	function f()
+	{
+		alert(new Error().stack);
+	}
+
+	f(); // выведет список вложенных вызовов, с номерами строк, где они были сделаны
+
+</script>

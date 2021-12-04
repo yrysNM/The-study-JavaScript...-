@@ -1,0 +1,63 @@
+<script type="text/javascript">
+	try
+	{
+		alert("Started block try");
+		//..code
+		allalalla //error
+		alert("End block try");
+	}catch(e)
+	{
+		alert("Блок catch не получит управление, так как нет ошибок");
+	}
+
+	alert("Потом код продолжит выполнение...");
+
+	var data = "Has Error"; // in  date error
+
+	try 
+	{
+		var user = JSON.parse(date); // <--‐ ошибка при выполнении
+		alert(user.name); // not worked
+	}catch(e)
+	{
+		//...выполнится catch
+		 alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз" );
+		  alert( e.name );
+		  alert( e.message );
+
+	}
+
+	//example2 
+	var data = '{ age: 30 }'; 
+
+	try
+	{
+		var user = JSON.parse(data);
+		alert(user.name);
+	}catch(e)
+	{
+		alert("Извините, в данных ошибка");
+	}
+
+	//example3
+	var data = '{"age": 30}';
+
+	try
+	{
+		var user = JSON.parse(data);
+
+		if(!user.name)
+		{
+			throw new SyntaxError("Данные некорректны");
+
+		}
+
+		alert(user.name);
+	}catch(e)
+	{
+		alert( "Извините, в данных ошибка" );
+	}
+
+	
+
+</script>

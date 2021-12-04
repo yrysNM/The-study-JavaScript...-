@@ -1,0 +1,38 @@
+<script type="text/javascript">
+
+	function PropertyError(property)
+	{
+		Error.call(this, property);
+		this.name = "PropertyError";
+
+		this.property = property;
+		this.message = "Error in property" + property;
+
+		if(Error.captureStackTrace)
+		{
+			Error.captureStackTrace(this, this.constructor);
+		} else
+		{
+			this.stack = (new Error()).stack;
+		}
+	}
+
+	PropertyError.prototype = Object.create(Error.prototype);
+	PropertyError.prototype.constructor = PropertyError;
+
+
+	function PropertyRequiredError(property)
+	{
+		PropertyError.apply(this, arguments);
+		this.name = "PropertyRequiredError";
+		this.message = "Gone property " + property;
+	}
+
+	PropertyRequiredError.prototype = Object.create(PropertyError.prototype);
+	PropertyRequiredError.prototype.constructor = PropertyRequiredError;
+
+	var err = new PropertyRequiredError("age");
+
+	//went intest
+	alert(err instanceof PropertyError); //true
+</script>

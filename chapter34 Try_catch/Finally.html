@@ -1,0 +1,56 @@
+<script type="text/javascript">
+	try
+	{
+		alert("try");
+		if(confirm("'Сгенерировать ошибку?'")) BAD_CODE();
+	}catch(e)
+	{
+		 alert("catch");
+	}finally
+	{
+		alert("finally");
+	} //finally используют, чтобы завершить начатые операции при любом варианте развития событий.
+
+	//example2
+	function sum(n)
+	{
+		return n ? (n + sum(n - 1)) : 0;
+	}
+
+	var n = +prompt("Enter n number: ", 100);
+
+	var start = new Date();
+
+	try
+	{
+		var result = sum(n); 
+	}catch(e)
+	{
+		result = 0;
+	}finally
+	{
+		var diff = new Date() - start;
+	}
+
+	alert(result ? result : "had error");
+	alert("Выполнение заняло " + diff);
+
+	//LITTLE TREST 
+	function func()
+	{
+		try
+		{
+			return 1;
+			//// сразу вернуть значение
+		}catch(e)
+		{
+			; //empty
+		}finally
+		{
+			alert("finally");
+		}
+	}
+
+	alert(func());  // сначала finally, потом 1
+
+</script>

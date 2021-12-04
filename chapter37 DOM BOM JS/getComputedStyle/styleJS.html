@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- site on and off</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// если запустить этот код, то <body> "мигнёт"
+		document.body.style.display = "none";
+
+		setTimeout(function()
+		{
+			document.body.style.display = "";
+		}, 1000);
+
+		//example2
+		document.body.style.margin = '20px';
+		alert(document.body.style.marginTop); // 20px !
+	
+		document.body.style.color = "#abc";
+		alert(document.body.style.color); //rgb(170, 187,204);
+
+		//example 3
+		document.body.style.backgroundColor = prompt("background color ?",  "green");
+	</script>
+</body>
+</html>

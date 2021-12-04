@@ -1,0 +1,20 @@
+<div>This is </div>
+<div>Everthing</div>
+<div>Element DOM </div>
+
+<script type="text/javascript">
+	if(!Element.prototype.remove)
+	{
+		ELment.prototype.remove = function remove()
+		{
+			if(this.parentNode)
+			{
+				this.parentNode.removeChild(this);
+			}
+		};
+	}
+
+	let elem = document.body.children[0];
+
+	elem.remove();
+</script>

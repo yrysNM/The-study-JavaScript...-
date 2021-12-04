@@ -1,0 +1,38 @@
+<script>
+    var vasya = {
+        age: 21,
+        name: "Vasia",
+        surname: "Petrov"
+    };
+
+    var user = {
+        isAdmin: false,
+        isEmailConfirmed: true
+    };
+
+    var student = {
+        university: "My university"
+    };
+
+    copy(vasya, user, student);
+
+    alert(vasya.isAdmin) ; //false
+    alert(vasya.university); //My university;
+
+
+
+    function copy()
+    {
+        var dst = arguments[0];
+        for(let i = 1; i < arguments.length; i++)
+        {
+            let arg = arguments[i];
+            for(let key in arg)
+            {
+                dst[key] = arg[key];
+            }
+        }
+
+        return dst;
+    }
+</script>

@@ -1,0 +1,48 @@
+<script>
+	var user = 
+	{
+		name: "Yrys",
+
+		sayHi: function() 
+		{
+			showName(this); // передать текущий объект в showName
+
+		}
+	};
+
+	function showName(nameObj)
+	{
+		alert(nameObj.name);
+	}
+
+	user.sayHi(); //Yrsy
+
+	function sayHi()
+	{
+		alert(this.firstName);
+	}
+
+	var user2 = {firstName2: "Erke" };
+	var admin = {firstName2: "Admin: Yrys"};
+
+	function func()
+	{
+		alert(this.firstName2);
+	} 
+
+	user2.f = func;
+	admin.g = func;
+
+	// this равен объекту перед точкой:
+	user2.f(); //ERke
+	admin.g(); //ADmin
+	admin['g'](); // // Админ (не важно, доступ к объекту через точку или квадратные скобки
+
+
+	function test_func()
+	{
+		alert(this);
+	}
+
+	test_func();
+</script>

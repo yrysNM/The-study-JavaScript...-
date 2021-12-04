@@ -1,0 +1,18 @@
+<script>
+    function eat()
+    {
+        arr.pop();
+    }
+
+    var arr = ["we", "dont", "scare", "wolf"];
+
+    alert(arr.length); //5
+
+    eat(arr);
+    eat(arr);
+    alert(arr.length); //3
+
+    var a = [];
+    a[0] = 0;
+    a[5] = 5; //0 ,,,, 5 0 before a.length
+</script>

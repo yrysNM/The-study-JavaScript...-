@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Open or close</title>
+
+	<style type="text/css">
+		#contents
+		{
+			padding:  5px;
+			border:  1px solid green;
+
+		}
+
+	</style>
+</head>
+<body>
+	<fieldset id = "contents">
+		<legend>#contents</legend>
+		<p>
+			 Как насчет почитать <a href="http://wikipedia.org">Википедию</a>, или посетить <a href="http://w3.org"><i>W3.org</i></a> и узнать про современные стандарты?
+		</p>
+	</fieldset>
+
+	<script type="text/javascript">
+		contents.onclick = function(evt)
+		{
+			let target = evt.target;
+
+			function handlerLInk(href)
+			{
+				let isLeaving = confirm("Open:  " + href + "?");
+				if(!isLeaving) return false;
+			}
+
+			while(target != contents)
+			{
+				if(target.nodeName == "A")
+				{
+					return handlerLInk(target.getAttribute("href"));
+				}
+
+				target = target.parentNode;
+			}
+		};
+	</script>
+</body>
+</html>

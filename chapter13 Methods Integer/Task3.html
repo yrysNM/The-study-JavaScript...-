@@ -1,0 +1,10 @@
+<script>
+    alert(getDecimal(12.345));
+    alert(getDecimal(1.2));
+    alert(getDecimal(-1.34534));
+
+    function getDecimal(n)
+    {
+        return +(n - Math.round(n)).toFixed(10);
+    }
+</script>

@@ -1,0 +1,21 @@
+<ul>
+	<li class = "chapter"> Chapter1 
+		<ul>
+			<li class = "subchapter">Chapter <span class = "num">1.1</span> </li>
+
+			<li class  = "subchapter">Chapter <span class = "num"> 1.2 </span> </li>
+		</ul>
+	</li>
+</ul>
+
+<script type="text/javascript">
+	let numberSpan = document.querySelector(".num");
+
+	  // ближайший элемент сверху подходящий под селектор li
+  alert(numberSpan.closest('li').className) // subchapter
+  // ближайший элемент сверху подходящий под селектор .chapter
+  alert(numberSpan.closest('.chapter').tagName) // LI
+  // ближайший элемент сверху, подходящий под селектор span
+  // это сам numberSpan, так как поиск включает в себя сам элемент
+  alert(numberSpan.closest('span') === numberSpan) // true
+</script>

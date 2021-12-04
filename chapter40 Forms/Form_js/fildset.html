@@ -1,0 +1,16 @@
+<body>
+	<form>
+		<fieldset name = "set">
+			<legend>fieldset</legend>
+			<input name = "text" type = "text">
+		</fieldset>
+	</form>
+
+	<script type="text/javascript">
+		var form = document.forms[0];
+
+		alert(form.elements.text); //INput
+		alert(form.elements.set.elements.text);//INPUT
+	</script>
+
+</body>

@@ -1,0 +1,49 @@
+<script>
+
+    //method split
+    var names = "Masha, Petia, Marina";
+
+    var arr = names.split(", "); 
+    //К счастью, есть метод split(s) , который позволяет превратить строку в массив, разбив ее по разделителю s . В примере ниже таким разделителем
+    //является строка из запятой и пробела.
+    alert(names);
+    
+    for(var i = 0; i < arr.length; i++)
+    {
+        alert("You have message " + arr[i]);
+    }
+
+
+    //method slice
+    var arr = ["I ", "learn ", " JavaScript"];
+
+    arr.splice(1, 1) //start with pos 1, remove num1 element;
+
+    alert(arr); //I , JavaScript
+
+    //Метод splice также может вставлять элементы без удаления, для этого достаточно установить deleteCount в 0 :
+
+    var text = ["I", "learn", "JavaScript"];
+    
+    //pos 2
+    //delete 0
+    //pqste "hard lang"
+    arr.splice(2, 0, "hard", "lang");
+
+    alert(arr); //I , JavaScript,hard,lang
+
+
+    //sort
+    function compareNumeric(a, b)
+    {
+        if(a > b) return 1;
+        if(a < b) return -1;
+
+    }
+
+    var sort_arr = [1, 15, 2];
+
+    sort_arr.sort(compareNumeric);
+
+    alert(sort_arr);
+</script>

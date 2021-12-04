@@ -1,0 +1,47 @@
+<script>
+    function formatDate(date)
+    {
+        var diff = new Date() - date; // diffrense in millisec
+
+        if(diff < 1000) // out 1 sec
+        {
+            return " только что";
+        }
+
+        var sec = Math.floor(diff / 1000); //conversion diff in sec
+        
+        if(sec < 60) // 1 min
+        {
+            return sec + " сек. назад";
+        }
+
+        var min = Math.floor(diff / 60000); //conversion diff(millsrcond) by minut
+        if(min < 60)
+        {
+            return min + " мин. назад";
+        }
+
+          // форматировать дату, с учетом того, что месяцы начинаются с 0
+          var d = date;
+
+          d = [
+              '0' + d.getDate(),
+              '0' + (d.getMonth() + 1), 
+              '' + d.getFullYear(),
+              '0' + d.getHours(),
+              '0' + d.getMinutes()
+          ];
+
+          for(let i = 0; i < d.length; i++)
+            {
+                d[i] = d[i].slice(-2);
+            }
+
+        return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+    }
+
+    alert( formatDate(new Date(new Date() - 1)) ); // только что
+    alert( formatDate(new Date(new Date() - 30 * 1000)) ); // 30 сек. назад
+    alert( formatDate(new Date(new Date() - 5 * 60 * 1000)) ); // 5 мин. назад
+    alert( formatDate(new Date(new Date() - 86400 * 1000)) ); // вчерашняя дата в формате "дд.мм.гг чч:мм"
+</script>

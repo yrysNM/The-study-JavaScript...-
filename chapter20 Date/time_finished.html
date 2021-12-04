@@ -1,0 +1,13 @@
+<script>
+    var start = new Date;
+
+    for(let i = 0;  i < 100000; i++)
+    {
+        var doSomething = i * i * i;
+
+    }
+
+    var end = new Date;
+
+    alert("Loop over " + (end - start) + " ms");
+</script>

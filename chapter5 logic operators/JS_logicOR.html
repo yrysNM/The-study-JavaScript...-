@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS -- OR ||</title>
+</head>
+<body>
+    <script>
+      // Если все значения «ложные», то || возвратит последнее из них:
+        console.log(1 || 0); // 1
+        console.log(true || "i don;t care"); // true
+        console.log(null || 1); // 1
+        console.log(undefined || 0); // 0
+
+        // true = 1  false = 0
+
+        var undef; // vaibles with undefined
+        var zero = 0;
+        var emptyStr = "";
+        var msg = "Hello";
+
+        var result = undef || zero || emptyStr || msg || 0;
+
+        alert(result); // выведет "Hello" ‐ первое значение, которое является true
+
+
+        
+
+    </script>
+</body>
+</html>

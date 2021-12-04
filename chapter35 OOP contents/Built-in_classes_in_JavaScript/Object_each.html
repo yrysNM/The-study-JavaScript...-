@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	Object.prototype.each = function(f)
+	{
+		for(var  prop in this  )
+		{
+			 // пропускать свойства из прототипа
+			if(!this.hasOwnProperty(prop)) continue;
+
+
+			var value = this[prop];
+			f.call(value, prop, value); // вызовет f(prop, value), this=value
+
+		}
+	}
+
+	// Попробуем! (внимание, пока что это работает неверно!)
+	var user = {
+		name: "Vasya",
+		age: 25
+	};
+
+	user.each(function(prop,  val)
+		{
+			alert(prop); //name -> age ->//(!) each
+		});
+</script>

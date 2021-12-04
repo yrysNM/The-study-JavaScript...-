@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	var timers = {};
+
+	// прибавит время выполнения f к таймеру timers[timer]
+	function timingDecorator(f,  timer)
+	{
+		return function() 
+		{
+			var start = performance.now();
+
+			var result = f.apply(this, arguments);
+
+			if(!timers[timer]) timers[timer] = 0;
+
+			timers[timer] += performance.now() - start;
+
+			return result
+		}
+	}
+
+	var fibonacci = function f(n)
+	{
+		return (n > 2) ? f(n - 1) + f(n - 2) : 1;
+	}
+
+	// использование: завернём fibonacci в декоратор
+	fibonacci = timingDecorator(fibonacci,  "fibo")
+
+	// неоднократные вызовы...
+	alert(fibonacci(10)); //55
+	alert(fibonacci(20)); //6765
+
+	alert(timers.fibo + "ms"); //any moment can youget timing
+</script>

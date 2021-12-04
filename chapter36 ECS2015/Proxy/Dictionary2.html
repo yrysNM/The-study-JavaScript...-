@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	"use strict";
+
+	let dictionary = {
+  	'Hello': 'Привет',
+ 	 'Bye': 'Пока'
+	};
+
+	dictionary = new Proxy(dictionary,
+	{
+		get(target, phrase)
+		{
+			if(phrase in target)
+			{
+				return target[phrase];
+			}else
+			{
+				console.log(`No phrase: ${phrase}`);
+				return phrase;
+			}
+		}
+	});
+
+	// Обращаемся к произвольным свойствам словаря!
+alert( dictionary['Hello'] ); // Привет
+alert( dictionary['Welcome']); // Welcome (без перевода)
+
+
+alert("Hello" in dictionary); //true
+	alert("welcome" in dictionary); //false //not have has method
+
+
+</script>

@@ -1,0 +1,16 @@
+<body>
+	<div id = "elem" about = "Elephant" class = "silling"></div>
+
+	<script type="text/javascript">
+		alert(elem.getAttribute("About")); //(1) Elephant
+
+		elem.setAttribute("Test", 123); //(2) install Test
+		alert(document.body.innerHTML); //(3) ) в HTML видны все атрибуты!
+
+		let attrs = elem.attributes; ; // (4) можно получить коллекцию атрибутов
+		for(let i = 0; i < attrs.length; i++)
+		{
+			alert(attrs[i].name + " = " + attrs[i].value);
+		}
+	</script>
+</body>

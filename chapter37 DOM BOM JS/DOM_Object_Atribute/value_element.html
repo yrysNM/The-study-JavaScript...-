@@ -1,0 +1,19 @@
+<body>
+	<input id = "input" type = "text" value = "markup" />
+
+	<script type="text/javascript">
+		input.value = "new"; //поменяли свойств
+
+		alert(input.getAttribute("value")); //	markup', не изменилось!
+
+		//changed value with setAttribute example
+
+		input.setAttribute("value", "new"); //changed attribute
+
+		alert(input.value); //new
+
+
+	</script>
+
+
+</body>

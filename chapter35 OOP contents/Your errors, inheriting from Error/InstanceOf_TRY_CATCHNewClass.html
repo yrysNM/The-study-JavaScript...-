@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	//update
+	function PropertyError(property)
+	{
+		this.name = "PropertyErorr";
+
+		this.property = property;
+		this.message = "Errror in property " + property;
+
+		if(Error.captureStackTrace)
+		{
+			Error.captureStackTrace(this, PropertyError);
+		}
+		else
+		{
+			this.stack = (new Error()).stack;
+		}
+	}
+
+	PropertyError.prototype = Object.create(Error.prototype);
+
+	//generation Error
+	function readUser(data)
+	{
+		var user = JSON.parse(data);
+
+		if(!user.age)
+		{
+			throw new PropertyError("age");
+		}
+
+		if(!user.name)
+		{
+			throw new PropertyError("name");
+		}
+
+		return user;
+	}
+
+	//Start and try..catch
+
+	try
+	{
+		var user = readUser('{ "age": 25 }');
+	}catch(err)
+	{
+		if(err instanceof PropertyError )
+		{
+			if(err.property == "name")
+			{
+			// если в данном месте кода возможны анонимы, то всё нормально
+			alert("Hello Anonim");
+			}else
+			{
+				alert(err.message); //Error in property...
+			}
+
+		}else if(err instanceof SyntaxError)
+		{
+			alert("Error in syntax data " + err.message);
+		}else
+		{
+			throw err; //неизвестная ошибка, не знаю что с ней делать
+		}
+
+	}
+</script>

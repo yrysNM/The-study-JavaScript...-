@@ -1,0 +1,37 @@
+<style type = "text/css">
+	.external
+	{
+		background-color:  yellow;
+	}
+</style>
+
+<a name = "list">list</a>
+
+<ul>
+	  <li><a href = "http://google.com">http://google.com</a></li>
+
+	  <li><a href="/tutorial">/tutorial.html</a></li>
+	  <li><a href="local/path">local/path</a></li>
+	  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+	  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+	  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script type="text/javascript">
+	let links = document.querySelectorAll("a");
+
+	for(let  i = 0; i < links.length; i++)
+	{
+		let a = links[i];
+
+		let href = a.getAttribute("href");
+
+		if(!href) continue; //not attribute
+
+		if(href.indexOf("://") == -1) continue; // without protocol
+
+		if(href.indexOf("https://internal.com") == 0) continue; // inside 
+
+		a.classList.add("external");
+ 	}
+</script>

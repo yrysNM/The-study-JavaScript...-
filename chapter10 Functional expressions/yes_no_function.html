@@ -1,0 +1,19 @@
+<script>
+    function ask(question, yes, no)
+    {
+        if(confirm(question)) yes();
+        else no();
+    }
+
+    function showOk()
+    {
+        alert("Вы  согласились. ");
+    }
+
+    function showCancel()
+    {
+        alert("Вы отмеили выполнения. ");
+    }
+
+    ask("Вы согласны? ", showOk,  showCancel);
+</script>

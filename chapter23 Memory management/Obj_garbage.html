@@ -1,0 +1,47 @@
+<script>
+	function f()
+	{
+		var value = 123; 
+
+		function g() {return value} // g view only insite
+
+		return g;
+	}
+
+	var g = f(); //// функция g будет жить и сохранит ссылку на объект переменных
+
+	alert(f());
+
+
+	//Если f() будет вызываться много раз, а полученные функции будут сохраняться, например, складываться в массив, то будут сохраняться и объекты LexicalEnvironment с соответствующими значениями value :
+
+	function f2()
+	{
+		var value = Math.random();
+
+		return function() {};
+	}
+
+	var arr = [f2(), f2(), f2()];
+
+	arr.forEach(function(arr)
+	{
+		alert(arr);
+	});
+
+	//Объект LexicalEnvironment живёт ровно до тех пор, пока на него существуют ссылки. В коде ниже после удаления ссылки на g умирает:
+
+	function f3()
+	{
+		var value = 123;
+
+		function g() {}
+
+		return g;
+	}
+
+	var g = f(); //function g alive
+
+	g = null; /// ..а вот теперь память будет очищена
+
+</script>

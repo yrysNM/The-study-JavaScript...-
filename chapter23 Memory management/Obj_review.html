@@ -1,0 +1,15 @@
+<script>
+	var user = 
+	{
+		name: "Vasya"
+	};
+
+	user = null; //Теперь объект { name: "Вася" } более недоступен. Память будет освобождена.
+
+	var vasya = {};
+	var petya = {};
+	vasya.friend = petya;
+	petya.friend = vasya;
+
+	vasya = petya = null;
+</script>

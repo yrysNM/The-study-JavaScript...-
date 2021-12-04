@@ -1,0 +1,49 @@
+<script>
+	function printArgs()
+	{
+		arguments.join = [].join; // // одолжили метод (1)
+
+		var argStr =arguments.join(":"); 
+
+		alert(argStr); //1:2:3
+	}
+
+	printArgs(1, 2, 3);
+
+	//Мы вызвали метод без копирования. Чисто, безопасно. Call method ⬇
+	function printArgs_WithCall() 
+	{
+		var join = [].join; //copy link by function in varible
+
+		  // вызовем join с this=arguments,
+		 // этот вызов эквивалентен arguments.join(':') из примера выше
+
+		var argStr = join.call(arguments, ":");
+
+		alert(argStr); //worked and view 1:2:3
+	}
+
+	printArgs_WithCall(1, 2, 3);
+
+
+	
+
+	//why it is worked becouse join function like here ⬇
+	function join(separotor)
+	{
+		if(!this.legnth) return " ";
+
+		var str = this[0];
+
+		for(var i = 0; i < this.length; i++)
+		{
+			str += separotor + this[i];
+		}
+
+		return str;
+	}
+
+
+
+
+</script>

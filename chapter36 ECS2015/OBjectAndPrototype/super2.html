@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	"use strict";
+	let animal = {
+		walk()
+		{
+			alert("Ima walking");
+		}
+	};
+
+	let rabbit = {
+		__proto__: animal,
+		walk: function() //need: Walk(){
+		{
+			super.walk(); //will be error!
+		}
+	};
+
+	rabbit.walk();
+</script>

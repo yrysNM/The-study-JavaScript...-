@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<title>JS -- task3</title>
+
+ 	<link href = "css/style.css" rel = "stylesheet" type = "text/css" />
+
+ 	<script type="text/javascript" src = "js/script.js"></script>
+
+
+ </head>
+ <body>
+ 	Клик на элементе выделяет только его.
+  <br> Ctrl(Cmd)+Клик добавляет/убирает элемент из выделенных.
+  <br> Shift+Клик добавляет промежуток от последнего кликнутого к выделению.
+  <br>
+
+  <ul>
+    <li>Кристофер Робин</li>
+    <li>Винни-Пух</li>
+    <li>Ослик Иа</li>
+    <li>Мудрая Сова</li>
+    <li>Кролик. Просто кролик.</li>
+  </ul>
+
+    <button onclick="alert(listSelect.getSelected())">listSelect.getSelected()</button>
+
+    <script type="text/javascript">
+    	let listSelect = new ListSelect({
+    		elem: document.querySelector("ul")
+    	});
+
+    </script>
+ </body>
+ </html>

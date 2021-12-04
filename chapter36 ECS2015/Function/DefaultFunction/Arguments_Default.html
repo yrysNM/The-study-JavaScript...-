@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	function showMenu(title = "Без заголовка", width = 100, height = 200)
+	{
+		alert(title  + " " + width + " " + height);
+	}
+
+	showMenu("Menu");
+
+	//example2
+	function showMenu2(title = "Заголовок", width = 100, height = 200)
+	{
+		alert("title=" + title   + " width = " + width + 
+				" height = " + height);
+	} 
+
+	// По умолчанию будут взяты 1 и 3 параметры
+	// title=Заголовок width=null height=200
+	showMenu2(undefined,  null);
+
+
+	//example3
+	function sayHi(who = getCurrentUser().toUpperCase())
+	{
+		alert("Hello " + who);
+	}
+
+	function getCurrentUser()
+	{
+		return "Vasya";
+	}
+
+	sayHi();
+</script>

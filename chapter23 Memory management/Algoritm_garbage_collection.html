@@ -1,0 +1,26 @@
+<script>
+	function marry(man, woman)
+	{
+		woman.husband = man;
+		man.wife = woman;
+
+		return{
+			father: man,
+			mother: woman
+		}
+	}
+
+	var family = marry(
+	{
+		name: "Vasilly"
+
+	}, { 
+		name: "Maria"
+	
+	});
+
+	delete family.father;
+	delete family.mother.husband; 
+
+	alert(family.name);
+</script>

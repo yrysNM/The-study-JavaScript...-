@@ -1,0 +1,23 @@
+<style type = "text/css">
+	body
+	{
+		margin:  1%;
+	}
+
+
+</style>
+
+<body>
+	<script type="text/javascript">
+		let elem = document.body;
+
+		function getStyle(elem)
+		{
+			return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
+		}
+
+		let marginTop = getStyle(elem).marginTop;
+
+		alert(marginTop);
+	</script>
+</body>

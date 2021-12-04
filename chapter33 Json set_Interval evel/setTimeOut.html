@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	/*var timeerId = setInterval(function() {
+		alert("tic...");
+	}, 2000);*/
+
+	var timerId = setTimeout(function tick()
+	{
+		alert("tick");
+		timerId = setTimeout(tick, 2000);
+	}, 2000); //Рекурсивный setTimeout
+</script>

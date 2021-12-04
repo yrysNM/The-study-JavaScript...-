@@ -1,0 +1,15 @@
+<script>
+    function getSecondsToday()
+    {
+        var now = new Date();
+
+        //create new Date object withput hours-minutes-seconds
+        var today  = new Date(now.getFullYear(), now.getMonth(),  now.getDate());
+
+        var diff = now - today; //diffrence in milliseconds
+        return Math.floor(diff / 1000); //translate in second
+    }
+
+    alert(getSecondsToday());
+
+</script>

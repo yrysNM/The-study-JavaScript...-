@@ -1,0 +1,25 @@
+<script>
+	var user = {}; 
+
+	Object.defineProperties(user , {
+		firstName: 
+		{
+			value: "Charli"
+		},
+
+		surname: 
+		{
+			value: "Ivan"
+		},
+
+		fullName: 
+		{
+			get: function()
+			{
+				return this.firstName + " " + this.surname;
+			}
+		}
+	});
+
+	alert(user.fullName); //Charli Ivan
+</script>

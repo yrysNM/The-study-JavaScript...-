@@ -1,0 +1,57 @@
+<script type="text/javascript">
+	//ANimal
+	function Animal(name)
+	{
+		this.name = name;
+		this.speed = 0;
+	}
+
+	Animal.prototype.run = function(speed) 
+	{
+		this.speed += speed;
+		alert(this.name + " ranning, speed " + this.speed);
+	};
+
+	Animal.prototype.stop = function()
+	{
+		this.speed = 0;
+		alert(this.name + " stopped");
+	};
+
+	//Rabbit 
+	function Rabbit(name)
+	{
+		this.name = name;
+		this.speed = 0;
+	}
+
+	// 2.1. Наследование
+	Rabbit.prototype = Object.create(Animal.prototype);
+	Rabbit.prototype.constructor = Rabbit;
+
+
+	//MEthod Rabbit
+	Rabbit.prototype.jump = function()
+	{
+		this.speed++;
+		alert(this.name + " jumping, speed " + this.speed);
+	};
+
+	Rabbit.prototype.run = function(speed)
+	{
+		/*this.speed++;
+		this.jump();*/
+		
+			 // вызвать метод родителя, передав ему текущие аргументы
+			 Animal.prototype.run.apply(this, arguments);
+			// this.jump();
+		
+	}
+
+
+	var rabbit = new Rabbit("Rabbit");
+	rabbit.jump();
+	rabbit.run(10);
+
+
+</script>

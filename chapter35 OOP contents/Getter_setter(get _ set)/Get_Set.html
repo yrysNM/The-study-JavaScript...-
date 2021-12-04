@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function CoffeMachine(power, capacity)
+	{
+		var waterAmount = 0;
+
+		this.waterAmount = function(amount)
+		{
+			  // вызов без параметра, значит режим геттера, возвращаем свойство
+			  if(!arguments.length) return waterAmount;
+
+			  if(amount < 0)
+			  {
+			  	throw new Error("Значение должно быть положительным");
+			  } 
+			  if(amount > capacity)
+			  {
+			  	throw new Error("Нельзя залить воды больше, чем " + capacity);
+			  }
+
+			  waterAmount = amount;
+		};
+	}
+
+	var coffeMachine = new CoffeMachine(1000, 500);
+
+	//example т единую функцию
+	coffeMachine.waterAmount(450);
+	alert(coffeMachine.waterAmount()); 
+</script>

@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	function Machine(params) {
+	  // локальные переменные и функции доступны только внутри Machine
+	  var privateProperty;
+	  // публичные доступны снаружи
+	  this.publicProperty = ...;
+	  // защищённые доступны внутри Machine и для потомков
+	  // мы договариваемся не трогать их снаружи
+	  this._protectedProperty = ...
+	}
+		var machine = new Machine(...)
+		machine.public();
+
+
+	function Machine(parems)
+	{
+		// локальные переменные и функции доступны только внутри Machine
+		var printProperty; //private varible
+
+		// публичные доступны снаружи
+		this.publicProperty = ...; //public varible or method(property)
+
+		// защищённые доступны внутри Machine и для потомков
+		// мы договариваемся не трогать их снаружи
+		this._protectedProperty = ...
+	}
+
+	var machine = new Machine(...);
+	machine.public();
+
+	function CoffeeMachine(parans)
+	{
+		// универсальный вызов с передачей любых аргументов
+		Machine.apply(this, arguments);
+
+		this.coffeePublicProperty = ...
+	}
+
+	var coffeeMachine = new CoffeeMachine(...);
+	coffeMachine.publicProperty();
+	coffeeMachine.coffePublicProperty();
+
+</script>

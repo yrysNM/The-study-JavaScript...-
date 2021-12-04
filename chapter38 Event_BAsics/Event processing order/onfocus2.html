@@ -1,0 +1,21 @@
+<input type = "button" id = "button" value = "Click" />
+<input type= "text" id  = "text" size = "60" />
+
+<script type="text/javascript">
+	
+	button.onclick = function()
+	{
+		text.value += " -> in onclick";
+
+		text.focus(); //  вызов инициирует событие onfocus
+
+		text.value += " from onclick-> ";
+
+	};
+
+	text.onfocus = function()
+	{
+		text.value += " !focus! ";
+	};
+
+</script>

@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	var expr, res;
+
+	while(true)
+	{
+		expr = prompt("Enter expression? ", "2-");
+
+		if(expr == null) break;
+
+		try
+		{
+			res = eval(expr);
+			if(isNaN(res))
+			{
+				throw new Error("Результат неопределён");
+			}
+
+			break;
+		}catch(e)
+		{
+			alert("Error: " + e.message + ", come again result ");
+		}
+	}
+
+	alert(res);
+</script>

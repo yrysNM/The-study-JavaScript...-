@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	"use strict";
+
+	let map = new Map();
+
+	map.set("1", "str1"); ////key 0 string
+	map.set(1, "num1"); //number
+	map.set(true, "boll"); //boolean
+
+	// map сохраняет тип ключа
+	alert(map.get(1)); //num1
+	alert(map.get("1")); //str1
+	alert(map.size); //3
+</script>

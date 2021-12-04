@@ -1,0 +1,60 @@
+<script>
+	function Journal(date)
+	{
+		this.date = date;
+	}
+
+	// возвращает значение, большее 0, если A больше B, иначе меньшее 0
+	Journal.compare = function(journalA, journalB)
+	{
+		return journalA.date -journalB.date;
+	};
+
+	//example 2
+	// В примере ниже эта функция используется для поиска самого раннего журнала из массива:
+
+	function Journal2(date)
+	{
+		this.date = date;
+
+		this.formatDate = function(date)
+		{
+			return date.getDate() + "." + (date. getMonth() + 1) + "." + date.getFullYear();
+		};
+
+
+		this.getTitle = function()
+		{
+			return "Create on " + this.formatDate(this.date);
+		};
+	}
+
+	Journal2.compare  = function(journalA, journalB)
+	{
+		return journalA.date - journalB.date;
+	};
+
+	var journals = [
+		new Journal2(new Date(2021, 1, 1)),
+		new Journal2(new Date(2022, 4, 5)),
+		new Journal2(new Date(2021, 9, 1)),
+		new Journal2(new Date(2012, 0, 1))
+	];
+
+
+	function findMin(journals)
+	{
+		var min = 0;
+		for(let i = 0; i < journals.length; i++)
+		{
+			//  // используем статический метод
+			if(Journal.compare(journals[min], journals[i]) > 0) 
+				min = i;
+
+		}
+
+		return journals[min];
+	}
+
+	alert(findMin(journals).getTitle());
+</script>

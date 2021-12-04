@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu</title>
+
+
+	<link href = "style.css" rel = "stylesheet" type = "text/css"/>
+	<script type="text/javascript" src = "js/Menu.js"></script>
+</head>
+<body>
+
+	<button onclick="menu.toggle()">menu.toggle()</button>
+ 	<button onclick="menu.open()">menu.open()</button>
+  	<button onclick="menu.close()">menu.close()</button>
+
+  	<script type="text/javascript">
+		  		// создать объект меню с данным заголовком и опциями
+		var menu = new Menu({
+			title: "Сладости",
+			items: [
+			"Торт",
+		    "Пончик",
+		    "Пирожное",
+		    "Шоколадка",
+		    "Мороженое"
+			]
+		});
+
+		// получить сгенерированный DOM‐элемент меню
+		var elem = menu.getElem();
+
+		// вставить меню в нужное место страницы
+		document.body.appendChild(elem);
+
+  	</script>
+
+</body>
+</html>

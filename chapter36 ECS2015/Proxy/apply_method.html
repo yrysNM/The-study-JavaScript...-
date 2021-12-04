@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	"use strict";
+
+	function sum(a, b)
+	{
+		return a + b;
+	}
+
+	let proxy = new Proxy(sum, {
+		  // передаст вызов в target, предварительно сообщив о нём
+		  apply: function(target, thisArg, argumentsList)
+		  {
+		  	  alert(`Буду вычислять сумму: ${argumentsList}`);
+		  	  return target.apply(thisArg, argumentsList);
+		  }
+	});
+
+	alert(proxy(1, 3));
+</script>

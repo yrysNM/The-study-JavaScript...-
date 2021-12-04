@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	"use strict";
+
+	let animal =   {
+		walk()
+		{
+			alert("Im walking"); 
+		}
+
+		//eqval property
+/*		walk: function()
+		{
+			alert("Im walking");
+		}*/
+	};
+
+	let rabbit = {
+		__proto__: animal,
+		walk() 
+		{
+			alert(super.walk); //wlak {...}
+			super.walk(); //Im Walking
+		}
+	};
+
+	rabbit.walk();
+</script>

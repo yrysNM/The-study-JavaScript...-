@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	// Промис выполнится сразу же
+
+	var promise = new Promise((resolve, reject) => resolve(1));
+
+	promise.then(function f1(result)
+		{
+			alert(result); //1
+			return 'f1';
+		}); 
+
+	promise.then(function f2(result) 
+		{
+			alert(result);
+			return 'f2';
+		});
+</script>

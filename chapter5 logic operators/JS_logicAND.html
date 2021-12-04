@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS -- AND &&</title>
+</head>
+<body>
+    <script>
+        if(1 && 0) // if(true && false)
+        {
+            console.log("dont work");
+        }
+
+        if(1 && 1) // if(true && true)
+        {
+            console.log("work");
+        }
+
+        akert(1 && 0); // 0 becouse 1 = true 
+        alert(1 && 5); // 5
+
+        // Первый аргумент ‐ false,
+        // Он и возвращается, а второй аргумент игнорируется
+
+        alert(null && 5); // null
+        alert(1 && 2 && 3); // 3 
+        //" && запинается на лжи(false)"
+    </script>
+</body>
+</html>

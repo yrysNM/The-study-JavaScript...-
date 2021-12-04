@@ -1,0 +1,21 @@
+<script type="text/javascript">
+	'use strict';
+
+	let [firstName, lastName] = ["Charli", "Cantor"];
+
+	alert(firstName);
+	alert(lastName);
+
+	// первый и второй элементы не нужны
+	let[, , title] = "CHarli Chaplin Imperator Rome".split(" ");
+
+	alert(title); //Imperator
+
+	//operator spread(...)
+	let[name, surname, ...rest] = "Yulii Chezar Imperator Rome".split(" ");
+	alert(name);	//Yulli
+	alert(surname); //Chezar
+	alert(rest); //Imperator , Rome (array, from 2x element)
+
+	
+</script>

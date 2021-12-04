@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	function CoffeMachine(power)
+	{
+		Machine.call(this); //отнаследовать
+
+		var waterAmount = 0;
+
+		this.setWaterAmount = function(amount)
+		{
+			waterAmount = amount;
+		};
+	}
+
+	var coffeMachine = new CoffeMachine(1000);
+
+	coffeMachine.enable();
+	coffeMachine.setWaterAmount(100);
+	coffeMachine.disable();
+</script>

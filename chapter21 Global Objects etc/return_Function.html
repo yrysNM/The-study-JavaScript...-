@@ -1,0 +1,25 @@
+<script>
+	function makeCounter()
+	{
+		var currentCounter = 1;
+
+		  // LexicalEnvironment = { currentCount: 1 }
+
+
+		return function() // [[Scope]] ‐> {currentCount: 1}
+		{
+			return currentCounter++;
+		};
+	}
+
+	var counter = makeCounter();
+
+	// каждый вызов увеличивает счётчик и возвращает результат
+	alert(counter() ); //1
+	alert(counter()); //2
+	alert(counter()); //3
+
+
+	var counter2 = makeCounter();
+	alert(counter2()); //1
+</script>

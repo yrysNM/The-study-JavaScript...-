@@ -1,0 +1,11 @@
+<input type = 'button' value = "Cilcik" id = "elem" /> 
+
+<script type="text/javascript">
+	elem.onclick = function(event)
+	{
+		// вывести тип события, элемент и координаты клика
+		alert(event.type + " by " + event.currentTarget);
+		alert(event.clientX + ": " + event.clientY);
+
+	}
+</script>

@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	function f(x) {} // any function
+
+	var timesr = {}; // object for timer
+
+	//отдекорировали
+	f = timingDecorator(f, "myFunc");
+
+	//run
+	f(1);
+	f(2);
+	f(3); //функция работает как раньше, но время подсчитывается
+
+	alert(timers.myFunc);  //бщее время выполнения всех вызовов 
+
+
+	
+</script>

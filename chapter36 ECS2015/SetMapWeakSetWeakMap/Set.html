@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	"use strict";
+
+	let set = new Set();
+
+	let vasya = {name: "VAsya"};
+	let petya = {name: "Petia"};
+	let dasha = {name:"Dasha"};
+
+	// посещения, некоторые пользователи заходят много раз
+	set.add(vasya);
+	set.add(petya);
+	set.add(dasha);
+	set.add(vasya);
+	set.add(petya);
+
+	alert(set.size);
+
+	set.forEach(user => alert(user.name)); 
+
+
+	let set2 = new Set(["апельсины", "яблоки", "бананы"]);
+
+	// то же, что: for(let value of set)
+	set2.forEach((value, valueAgain, set2) => {
+	  alert(value); // апельсины, затем яблоки, затем бананы
+	});
+
+</script>

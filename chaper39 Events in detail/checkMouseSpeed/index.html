@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS  -- check out mouse speed</title>
+
+	<link href = "css/style.css" rel = "stylesheet" type = "text/css" />
+  <script src="https://js.cx/test/libs.js"></script>
+	<script type="text/javascript" src = "js/hoverIntent.js"></script>
+	<script type="text/javascript" src = "js/test.js"></script>
+</head>
+<body>
+	
+	<div id = "elem" class = clock>
+		<span class = "hours">12</span>
+		<span class = "minutes">30</span>
+		<span class = "seconds">00</span>
+	</div>
+
+	<div id = 'tooltip' hidden>Tooltip</div>
+
+	<script type="text/javascript">
+		//for the demo
+		setTimeout(function()
+		{
+			new HoverIntent({
+				elem: elem,
+				over: function()
+				{
+					tooltip.hidden = false;
+				},
+				out: function()
+				{
+					tooltip.hidden = true;
+				}
+			});
+		}, 2000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<script type="text/javascript">
+	function User(name)
+	{
+		this.name = name;
+	}
+
+	var obj = new User("Vasya");
+	var obj2 = new obj.constructor("Petia");
+
+	alert(obj2.name); //Petia
+
+	//example2
+	function User2(name)
+	{
+		this.name = name;
+	}
+
+	User2.prototype = {};
+
+	var obj3 = new User2("Vasya");
+	var obj4 = new obj3.constructor("Petia");
+	
+	alert(obj4.name); //undefined
+</script>

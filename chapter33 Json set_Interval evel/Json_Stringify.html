@@ -1,0 +1,91 @@
+<script type="text/javascript">
+	var event = {
+		title: "Converation",
+		date: "Today"
+	};
+
+	var str = JSON.stringify(event);
+	alert(str); //{"title":"Converation","date":"Today"}
+
+	// Обратное преобразование.
+	event  = JSON.parse(str);
+
+	var room = {
+		nunber: 23,
+		occupy: function()
+		{
+			alert(this.number);
+		}
+	};
+
+	event = {
+		title: "Converation",
+		date: new Date(Date.UTC(2014, 0, 1)),
+		room:  room
+	};
+
+	alert(JSON.stringify(event));
+	console.log(JSON.stringify(event)); 
+
+	//{"title":"Converation","date":"2014-01-01T00:00:00.000Z","room":{"nunber":23} if we add code toJson
+
+	var room_toJson = {
+		number: 23,
+		toJSON: function()
+		{
+			return this.number;
+		}
+	};
+
+	alert(room_toJson); //23s
+
+	// var user = {
+	// 	name: "VAsya", 
+	// 	age: 25,
+	// 	window: window
+	// };
+
+	// alert(JSON.stringify(user));  // ошибка!
+	// TypeError: Converting circular structure to JSON (текст из Chrome)
+
+	//how to fixed error
+	var user_sol = {
+		name: "VAsya",
+		age: 25,
+		window: window
+	};
+
+	var str_sol = JSON.stringify(user_sol	, function(key, value)
+	{
+		if(key == "window") return undefined;
+
+		return value;
+	});
+
+	alert(str_sol);
+
+	// /beatiful format
+	var user_Beati = {
+		name: "Vasya",
+		age: 25,
+		roles: {
+			isAdmin: false,
+			isEditor: true
+		}
+	}; 
+
+	var str_bea = JSON.stringify(user_Beati, "", 4);
+	alert(str_bea);
+
+	/* Результат ‐‐ красиво сериализованный объект:
+	{
+	    "name": "Вася",
+	    "age": 25,
+	    "roles": {
+	        "isAdmin": false,
+	        "isEditor": true
+	    }
+	}
+*/
+
+</script>

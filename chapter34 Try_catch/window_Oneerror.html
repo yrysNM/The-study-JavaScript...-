@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	window.onerror = function(message, url, lineNumber)
+	{
+		    alert("Поймана ошибка, выпавшая в глобальную область!\n" +
+     	 "Сообщение: " + message + "\n(" + url + ":" + lineNumber + ")");
+	};
+
+	{
+	function readData()
+		error(); //oops something is wrong
+	}
+
+	readData();
+</script>

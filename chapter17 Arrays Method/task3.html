@@ -1,0 +1,21 @@
+<script>
+    function filterRangeInPlace(arr, a, b)
+    {
+        for(var i = 0; i < arr.length; i++)
+        {
+            var val = arr[i];
+            if(val < a || val > b) //check for elements
+            {
+                arr.splice(i--, 1); //remove element 
+            } 
+        }
+    }
+
+    var arr = [5, 3, 8, 1];
+    var arr2 = [5, 4, 3, 8, 0];
+
+    filterRangeInPlace(arr, 1, 4);
+    filterRangeInPlace(arr2, 3, 5);
+    alert(arr2);
+    alert(arr);
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function Animal(name)
+	{
+		this.name = name;
+	}
+
+	Animal.prototype.walk = function()
+	{
+		alert("Walk " + this.name);
+	};
+
+	function Rabbit(name)
+	{
+		this.name = name;
+	}
+
+	Rabbit.prototype = Object.crate(Aimal.prototype);
+
+	Rabbit.prototype.walk = function()
+	{
+		alert("jumping and walk " + this.name);
+	};
+
+	var rabbit = new Rabbit("Rabbit");
+
+	rabbit.walk();
+
+	
+</script>

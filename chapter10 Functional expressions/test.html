@@ -1,0 +1,74 @@
+<script type="text/javascript">
+	/*function  checkAge(age)
+	{
+		return (age >  18) ? true : confirm('Родители разрешили?');
+	}
+
+	checkAge(17);
+
+
+	function  pow2(x, n) 
+	{
+		return x ** n; 
+	}
+
+	alert(pow2(3, 2));
+
+	function min(a, b) 
+	{
+		return (a > b ) ? a : b; 
+	}
+
+	alert(min(4, 3))*/
+
+	// function countTrue(arr) {
+	// 	var count = 0;
+	// 	for(var i= 0; i < arr.length; i++)
+	// 	{
+	// 		if(arr[i] == true)
+	// 		{
+	// 			count++; 
+	// 		}else if(arr[i] == null)
+	// 		{
+	// 			count = 0;
+	// 		}
+	// 	}
+
+	// 	return count;
+	// }
+
+	// console.log(countTrue([true, false, false, true, false]));\
+
+
+	function sevenBoom(arr) {
+
+		// for(var i = 0; i < arr.length; i++)
+		// {
+		//  	return (arr[i] == 7) ? "Boom" : "there is no 7 in the array";
+		// }
+
+		/* var arrLength = arr.map(function(text)
+		    {
+		        return text.length;
+		    });*/
+
+		// var arrLength  = arr.map(function(text)
+		// {
+		// 	return (text == 7) ? "Boom!" : "there is no 7 in the array";
+		// });
+
+		// return arrLength;
+
+		arr.forEach( function(arr) {
+			// for(let i = 0; i < arr.length; i++)
+			// {
+			// 	return (arr[i] == 7) ? "Boom!" : "there is no 7 in the array";
+			// }
+		});
+		
+	}
+
+	console.log((sevenBoom([1, 2, 3, 4, 5, 6, 7])));
+	alert(sevenBoom([8, 6, 33, 100]));
+
+</script>

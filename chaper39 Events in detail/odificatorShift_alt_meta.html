@@ -1,0 +1,10 @@
+<button>Alt + Shift + CLick!</button>
+
+<script type="text/javascript">
+	document.body.children[0].onclick = function(e)
+	{
+		if(!e.altKey || !e.shiftKey) return;
+
+		alert("Hooyea");	
+	}	
+</script>

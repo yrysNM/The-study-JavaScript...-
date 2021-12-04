@@ -1,0 +1,57 @@
+<script type="text/javascript">
+	'use strict';
+
+	let options = {
+		title: "Menu",
+		width: 100,
+		height:  200
+	};
+
+	let {title, width,height} = options;
+
+	alert(title);
+	alert(width);
+	alert(height);
+
+	//example2
+
+	let options2 = {
+		title2: "Menu",
+		width2: 100,
+		height2: 200
+	};
+
+	let{width2: w, height2: h, title2} = options2;
+
+	alert(title2);
+	alert(w);
+	alert(h); //200
+		//В примере выше свойство width отправилось в переменную w , and etc
+
+	//example3
+	let  options3 = {
+		title3: "Menu"
+	};
+
+	let {width3 = 100, height3 = 200, title3} = options3;
+
+	alert(title3);
+	alert(width3);
+	alert(height3);
+
+	//example4
+	//Можно и сочетать одновременно двоеточие и равенство
+
+	let options4 = {
+		title4: "Menu"
+	};
+
+	let{width4: w2 = 100, height4: h2 = 200, title4} = options4;
+
+	alert(title4);
+	alert(w2);
+	alert(h2);
+
+
+	
+</script>

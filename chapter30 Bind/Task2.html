@@ -1,0 +1,35 @@
+<script type="text/javascript">
+	"use strict";
+
+	function ask(question, answer, ok, fail) {
+	  var result = prompt(question, '');
+
+	  if (result.toLowerCase() == answer.toLowerCase()) ok();
+
+	  else fail();
+	}
+
+	var user = {
+	  login: 'Василий',
+	  password: '12345',
+
+	  loginOk: function() {
+	    alert( this.login + ' вошёл в сайт' );
+	  },
+
+	  loginFail: function() {
+	    alert( this.login + ': ошибка входа' );
+	  },
+
+
+	  checkPassword: function() {
+
+	  	var loginFail = this.loginFail;
+	  	var loginOk = this.loginOk;
+
+	    ask("Ваш пароль?", this.password , loginOk, loginFail);
+	  }
+	};
+
+user.checkPassword();
+</script>

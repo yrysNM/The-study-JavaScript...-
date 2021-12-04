@@ -1,0 +1,38 @@
+<pre id="rabbit">
+  |\   /|
+   \|_|/
+   /. .\
+  =\_Y_/=
+   {>o<}
+</pre>
+
+<script type="text/javascript">
+
+  function hide()
+  {
+    let event = new Event("hide", {cancelable: true}); 
+    /*var event = new Event(тип события[, флаги]); 
+    Тип события – может быть как своим, так и встроенным, к примеру "click" .
+    Флаги – объект вида { bubbles: true/false, cancelable: true/false } , где свойство bubbles
+    указывает, всплывает ли событие, а cancelable – можно ли отменить действие по умолчанию.
+    Флаги по умолчанию: {bubbles: false, cancelable: false} .*/
+    if(!rabbit.dispatchEvent(event))
+    {
+      alert('действие отменено обработчиком');
+    }else
+    {
+      rabbit.hidden = true;
+    }
+  }
+
+  rabbit.addEventListener("hide", function(event)
+  {
+    if(confirm("Вызвать preventDefault?"))
+    {
+      event.preventDefault();
+    }
+  });
+
+  // прячемся через 2 секунды
+  setTimeout(hide, 2000);
+</script>

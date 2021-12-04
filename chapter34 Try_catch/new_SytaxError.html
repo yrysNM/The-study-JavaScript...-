@@ -1,0 +1,56 @@
+<script type="text/javascript">
+	var data = '{"age": 30, "name": "Vasya"}';
+
+
+	try
+	{
+		var user = JSON.parse(data);
+
+		if(!user.name)
+		{
+			throw new SyntaxError("ERror in data");
+		}
+
+		//blabla(); /// произошла непредусмотренная ошибка
+
+		alert(user.name);
+	}catch(e)
+	{
+		if(e.name == "SyntaxError")
+		{
+			alert("Sorry, an data error");
+		}else 
+		{
+			throw e;
+		}
+	}
+
+	//✅
+	function readData()
+	{
+		var data = '{ "name": "Вася", "age": 30 }';
+
+		try
+		{
+			blabla(); //error
+
+		}catch(e)
+		{
+			if(e.name == "SyntaxError")
+			{
+				throw e; // пробрасываем
+			}
+		}
+	}
+
+	try 
+	{
+		readDate();
+
+	}catch(e)
+	{
+		alert('Поймал во внешнем catch:' + e); // lovim
+	}
+
+
+</script>

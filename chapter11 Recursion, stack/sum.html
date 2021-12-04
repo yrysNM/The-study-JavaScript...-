@@ -1,0 +1,34 @@
+<script>
+    function calcsum(n)
+    {
+        var sum = 0;
+        for(var i= 1; i <=  n; i++)
+        {
+             sum += i;
+                                
+        }
+
+        return sum;
+     
+    }//aloritm
+
+    function sumRec(n)
+    {
+        if(n !== 1)
+        {
+            return n + sumRec(n - 1);
+        }else
+            return 1;
+        
+    }//recursion
+
+    function sumTo(n)
+    {
+          return n * (n + 1) / 2;
+    } // formula
+
+    console.log(sumRec(4));
+    console.log(calcsum(4));
+    console.log(sumTo(4));
+
+</script>

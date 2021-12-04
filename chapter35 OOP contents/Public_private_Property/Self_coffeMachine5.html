@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	function CoffeMachine(power)
+	{
+		this.waterCount = 0;
+
+		var WATER_HEAT_CAPACITY = 4200;
+
+		var self = this;
+
+		function getBoilTime()
+		{
+			return self.waterCount * WATER_HEAT_CAPACITY * 80 / power;
+		}
+
+		function onReady()
+		{
+			alert("Coffe done");
+		}
+
+		this.run = function()
+		{
+			setTimeout(onReady, getBoilTime());
+		};
+
+	}
+
+	var coffeMachine = new CoffeMachine(100000);
+	coffeMachine.waterCount = 200;
+
+	coffeMachine.run();
+</script>

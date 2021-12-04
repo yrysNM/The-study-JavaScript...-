@@ -1,0 +1,28 @@
+<script>
+    var x = prompt("Enter number values", "-11.5");
+    //Пустая строка и строка из пробельных символов преобразуются к 0 , поэтому считаются числами.
+    if(isNaN(x)) // it is not точно 
+    {
+        alert("String convers in NaN, Not integer");
+    }else {
+        alert("Integer");
+    }
+
+    alert(isNaN(null)); // false -- not NaN etc. "integer"
+    alert(isNaN(" \n   \n")); //false -- not NaN etc..(integer)
+
+    //check everthing function integer
+    function isNumeric(n)
+    {
+        return !isNaN(parseFloat(n) && isFinite(n));
+    }
+
+    alert(isNumeric(x));
+
+    console.log(0.1 + 0.2 === 0.3); // 0.3 === 0.3000000000004
+    console.log(0.1 + 0.2 > 0.3); //true
+
+    var number = 123456789;
+    alert(number.toLocaleString() ); //123 456 789 
+        
+</script>

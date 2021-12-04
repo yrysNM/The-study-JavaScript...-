@@ -1,0 +1,26 @@
+<script>
+    var user = {
+        name: "Vasya",
+        surname: "Petrov",
+    }; 
+
+
+    alert(user.name = "Sergei");
+
+    delete user.name;
+
+    var menu = {
+        width: 300,
+        height: 200,
+        title: "Menu"
+    };
+
+    var counter = 0;
+
+    for(var key in menu)
+    {
+        counter++;
+    }
+
+    alert("Properties: " + counter);
+</script>

@@ -1,0 +1,30 @@
+<div>THis is </div>
+<div>Element</div>
+
+<script type="text/javascript">
+	let elem = document.createElement("div");
+	elem.innerHTML = "<b>New Element</b>";
+
+	function insertAfter(elem, refElem)
+	{
+		let parent = refElem.parentNode;
+
+		let next = refElem.nextSibiling;
+
+		if(next)
+		{
+			return parent.insertBefore(elem, next);
+
+		}else
+			{
+				return parent.appendChild(elem);
+			}
+	}
+
+	let body = document.body;
+
+	//vistable elem after first element
+	insertAfter(elem,  body.firstChild); // <--- must work
+
+	insertAfter(elem, body.lastChild);
+</script>

@@ -1,0 +1,24 @@
+<style>
+	.order[order-state= "new"]
+	{
+		color:  green;
+	}
+
+	.order[order-state = "pending"]
+	{
+		color:  blue;
+	}
+
+	.order[order-state = "canceled"]
+	{
+		color:  red;
+	}
+
+
+</style>
+
+<div class = "order" order-state = "new">New order </div>
+
+<div class = "order" order-state = "pending">Wait for order</div>
+
+<div class = "order" order-state ="canceled">Order cancel </div>

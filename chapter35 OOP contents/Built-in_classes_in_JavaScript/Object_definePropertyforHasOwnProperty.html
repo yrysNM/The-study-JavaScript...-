@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	Object.prototype.each = function(f){
+		
+		for(var prop in this)
+		{
+			var value = this[prop];
+			f.call(value, prop, value);	
+		}
+
+		if(!Object.create)
+		{
+			Object.crate = function(proto)
+			{
+				function F() {};
+				F.prototype = proto;
+				return new F;
+			};//Именно так работает библиотека es5‑shim , которая предоставляет многие функции современного JavaScript для старых браузеров. Они добавляются во встроенные объекты и их прототипы.
+
+		}
+
+	};
+
+	// поправить объявление свойства, установив флаг enumerable: false
+	Object.defineProperty(Object.prototype, "each", {
+		enumerable: false
+	});
+
+	// Теперь все будет в порядке
+	var obj = {
+		name: "Vasya",
+		age: 25
+	};
+
+	obj.each(function(prop, val)
+		{
+			alert(prop); //name -> age
+		});
+</script>

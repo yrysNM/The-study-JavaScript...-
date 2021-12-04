@@ -1,0 +1,34 @@
+<style>
+	[hidden]{
+		display:  none;
+
+	}
+
+	
+</style>
+
+<script type="text/javascript">
+	if(document.documentElement.gidedn == undefined)
+	{
+		Object.defineProperty(Element.prototype, "hidden", 
+		{
+			set: function(value)
+			{
+				this.setAttribute("hidden", value); 
+			},
+			get: function()
+			{
+				return this.getAttribute("hidden");;
+			}
+		});
+	}
+</script>
+
+<div> Text </div>
+
+<div hidden>Attribute with hidden </div>
+<div  id = "last">Property hidden </di>
+
+<script type="text/javascript">
+	last.hidden = true;
+</script>

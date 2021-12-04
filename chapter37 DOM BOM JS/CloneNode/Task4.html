@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4 --- list add</title>
+</head>
+<body>
+		<h1>Create list</h1>
+
+		<script type="text/javascript">
+			let ul = document.createElement("ul");
+			document.body.appendChild(ul);
+
+			while(true)
+			{
+				let  data = prompt("Введите текст для пункта списка", "");
+
+				if(!data)
+				{
+					break;
+				}
+
+				let li = document.createElement("li");
+				li.appendChild(document.createTextNode(data));
+				ul.appendChild(li);
+			}
+		</script>
+</body>
+</html>

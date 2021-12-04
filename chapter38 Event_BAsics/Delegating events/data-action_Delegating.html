@@ -1,0 +1,39 @@
+<div id = "menu">
+	<button data-action = "save">Save</button>
+	<button data-action = "load">Load</button>
+	<button data-action = "search">Search</button>
+</div>
+
+<script type="text/javascript">
+	function Menu(elem)
+	{
+		this.save = function()
+		{
+			alert("Saved");
+		};
+
+		this.load = function()
+		{
+			alert("Loaded");
+		};
+
+		this.search = function()
+		{
+			alert("Searched");
+		};
+
+		let self = this;
+
+		elem.onclick = function(e)
+		{
+			let target = e.target;
+			let action = target.getAttribute("data-action");
+			if(action)
+			{
+				self[action]();
+			}
+		};
+	}
+
+	new Menu(menu);
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS</title>
+</head>
+<body>
+
+	<div>Button</div>
+	<script type="text/javascript">
+	
+	let a = document.createElement("a");
+	a.className = "button";
+	a.appendChild(document.createTextNode("Click me"));
+	a.href = "#";
+
+	let s = a.style;
+	s.MozBorderRadius = s.WebkitBorderRadius = s.borderRadius = "8px";
+	s.border = "2px groove green";
+	s.display = "block";
+	s.height = "30px";
+	s.lineHeight = "30px";
+	s.width = "100px";
+	s.textDecoration = "none";
+	s.textAlign = "center";
+	s.color = "red";
+	s.fontWeight = "bold"; 
+
+	let div  = document.body.children[0];
+	div.appendChild(a);
+</script>
+</body>
+</html>

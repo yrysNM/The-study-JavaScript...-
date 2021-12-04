@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	function sum(arr)
+	{
+		return arr.reduce(function(a, b)
+		{
+			return a + b; 
+		}); 
+	}
+	alert(sum([1, 2, 3])); //(6) == (1 + 2 + 3)
+
+	function sumArgs()
+	{
+		//var join = arguments.join = [].join;
+
+		var sun = [].slice.call(arguments);
+
+		var sum = sun.reduce(function(a, b)
+			{
+				return a + b;
+			});
+
+		alert(sum);
+	}
+
+	sumArgs(1, 2, 6); //9 == (1 + 2 + 6)
+</script>

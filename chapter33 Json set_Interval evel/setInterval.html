@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	var timerId = setInterval(function() {
+		alert("tic tak motherfucker");
+	}, 2000); //after 2s
+
+	//from 5s stoping 
+	setTimeout(function() {
+
+		clearInterval(timerId); //❎
+
+		alert("stop");
+	},   5000);
+</script>

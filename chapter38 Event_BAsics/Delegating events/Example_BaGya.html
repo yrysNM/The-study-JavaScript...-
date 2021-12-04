@@ -1,0 +1,65 @@
+<table id = "table">
+	<tr>
+		<th colspan = "3"><em>Bagua</em> Chart: Direction, Element, COlor, Meaning</th>
+	</tr>
+	<tr>
+		  <td><strong>Northwest</strong></td>
+		    <td>Metal</td>
+		    <td>Silver</td>
+		    <td>Elders</td>
+
+	</tr>
+
+	<tr>
+		<td><strong>North</strong></td>
+		<td>Water</td>
+		<td>Blue</td> 
+		<td>Change</td>
+	</tr>
+
+	<tr>
+		<td><strong>Northeast</strong></td>
+		<td>Earth</td>
+		<td>Yellow</td>
+		<td>Direction</td>
+	</tr>
+
+	 <!-- <tr>...еще 2 строки такого же вида...</tr>
+  	<tr>...еще 2 строки такого же вида...</tr> -->
+</table>
+
+<script type="text/javascript">
+	let selctedId;
+
+	table.onclick = function(event)
+	{
+		let target = event.target; // where was click
+
+		  // цикл двигается вверх от target к родителям до tabl
+		while(target != table)
+		{
+			if(target.tagName != "TD") /*return; // не на TD? тогда не интересует*/
+			{
+			    // нашли элемент, который нас интересует!
+				highlight(target); // show TD
+				return;
+			}
+
+			target = target.parentNode;
+			console.log("LCick");
+
+		}
+
+	};
+
+	function highlight(node)
+	{
+		if(selctedId)
+		{
+			selctedId.classList.remove("highlight");
+		}
+
+		selctedId = node;
+		selctedId.classList.add("highlight");
+	}
+</script>

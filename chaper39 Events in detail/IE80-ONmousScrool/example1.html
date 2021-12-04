@@ -1,0 +1,11 @@
+<div id = "showScroll" style = "background-color: red; width: 120px; height: 120px;">
+	
+</div>
+
+<script type="text/javascript">
+	window.onscroll = function()
+	{
+		let scrolled = window.pageOffset || document.documentElement.scrollTop;
+		document.getElementById("showScroll").innerHTML = scrolled + "px";
+	}
+</script>

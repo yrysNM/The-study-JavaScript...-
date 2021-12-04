@@ -1,0 +1,13 @@
+<script>
+    function getLastdayOfMonth(year, month)
+    {
+        var date = new Date(year, month + 1, 0);
+
+        alert(date.getDate());
+    }
+
+    getLastdayOfMonth(2012, 1); //29
+    getLastDayOfMonth(2012, 1); // 29
+    getLastDayOfMonth(2013, 1); // 28
+
+</script>

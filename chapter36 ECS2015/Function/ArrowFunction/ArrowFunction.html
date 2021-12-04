@@ -1,0 +1,31 @@
+<script type="text/javascript">
+	"use strict";
+	let group = {
+		title: "Our course",
+		students: ["Charli", "Bob", "Tony"],
+
+
+		showList: function()
+		{
+			this.students.forEach(
+				student => alert(this.title +   ": " + student )
+			)
+		},
+
+		//simple function
+		showListSimple: function()
+		{
+			this.students.forEach(function(student)
+			{
+				alert(this.title + ": " + student);
+			})
+		}
+	};
+
+	
+
+
+	group.showList();
+	group.showListSimple();
+
+</script>

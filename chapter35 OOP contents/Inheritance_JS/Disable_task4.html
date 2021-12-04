@@ -1,0 +1,78 @@
+<script type="text/javascript">
+	function Machine(power)
+	{
+		this._power =  power;
+		this._enabled = false;
+
+		var self = this; 
+
+		this.enable = function()
+		{
+			self._enabled = true;
+		};
+
+		this.disable = function()
+		{
+			self. _enabled = false;
+		};
+	}
+
+	function Fridge(power)
+	{
+		Machine.apply(this, arguments);
+
+		var food = []; //var == private
+
+		this.addFood = function()
+		{
+			if(!this._enabled)
+			{
+				throw new Error("Fridge is off!");
+
+			}
+
+			if(food.length + arguments.length >= this._power / 100)
+			{
+				throw new Error("Can't add, not enought power!");
+			}
+
+			for(var i = 0; i < arguments.length; i++)
+			{
+				food.push(arguments[i]); //add all arguments
+			}
+		};
+
+		this.getFood = function()
+		{
+			food.slice();
+		};
+
+		this.filterFood = function(filter)
+		{
+			return food.filter(filter);
+		};
+
+		this.removeFood = function(item)
+		{
+			var idx = food.indexOf(item);
+			if(idx != -1) food.splice(idx, 1);
+		};
+
+		var parentDisable = this.disable;
+
+		this.disable = function()
+		{	
+			if(food.length)
+			{
+				throw new Error("Can't off, beacount inside food");
+			}
+			parentDisable();
+		};
+	}
+
+	var fridge = new Fridge(500);
+	fridge.enable();
+	fridge.addFood("кус‐кус");
+	fridge.disable(); // ошибка, в холодильнике есть еда
+
+</script>  

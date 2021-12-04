@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	function* gen()
+	{
+		try
+		{
+			//error
+			let result = yield "How much 2 + 2?" 
+
+			alert("in up will be error ^^^");
+		}catch(e)
+		{
+			alert(e); //error
+		}
+
+	}
+
+	let  generator = gen();
+
+	let question = generator.next().value;
+
+	generator.throw(new Error("ответ не найден в моей базе данных"));
+</script>

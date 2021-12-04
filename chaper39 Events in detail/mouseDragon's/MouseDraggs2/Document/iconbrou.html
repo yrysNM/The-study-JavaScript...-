@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS -- example mouse</title>
+
+	<link href = "css/style.css" rel = "stylesheet" type = "text/css" /> 
+</head>
+<body>
+
+	<img src="https://e7.pngegg.com/pngimages/1013/430/png-clipart-google-chrome-for-android-web-browser-google-chrome-for-android-google-logo-google-chrome.png" class="draggable          ">
+	<img src="https://w7.pngwing.com/pngs/865/622/png-transparent-firefox-mozilla-foundation-web-browser-add-on-firefox-orange-logo-computer-wallpaper.png" class="draggable">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Internet_Explorer_9.png" class="draggable">
+	<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Opera_2015_icon.svg/1200px-Opera_2015_icon.svg.png" class="draggable">
+
+<p>Браузер переносить сюда:</p>
+	
+	<img src = "computer.png" class = "drappable" />
+
+	<script type="text/javascript">
+		let dragObject = {};
+		document.onmousedown = function(e)
+		{
+			if(e.which != 1)
+			{
+				return;
+			}
+
+			let elem = e.target.closest(".draggable");
+
+			if(!elem) return;
+
+			dragObject.elem = elem;
+
+			dragObject.downX = e.pageX;
+			dragObject.downY = e.pageY;
+
+		}
+
+	/*	document.onmousemove = function(e)
+		{
+			if(!dragObject.elem) return; //element not click
+
+			if(!dragObject.avatar) // элемент нажат, но пока не начали его двигат
+			{
+
+			}
+		}*/
+
+	</script>
+</body>
+</html>

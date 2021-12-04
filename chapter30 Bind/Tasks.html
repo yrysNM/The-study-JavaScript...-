@@ -1,0 +1,42 @@
+<script>
+	//1
+	function f()
+	{
+		alert(this);
+	}
+
+	var user = {
+		g: f.bind("Hello")
+	};
+
+	user.g(); //Hello
+
+	//2
+	function f2()
+	{
+		alert(this.name);
+	}
+
+	f2 = f2.bind({name: "Vasya"}).bind( {name: "Petia"} ); //Vasya
+
+	f2();
+
+
+	function sayHi()
+	{
+		alert(this.name);
+
+	}
+
+	sayHi.test = 5;
+	alert(sayHi.test); //5
+
+	var bound = sayHi.bind({
+		name: "Vasya"
+	});
+
+	alert(bound. test); //undefined
+
+	
+
+</script>

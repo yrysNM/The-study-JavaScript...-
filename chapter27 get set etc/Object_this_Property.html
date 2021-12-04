@@ -1,0 +1,37 @@
+<script>
+	var obj = {
+		a: 1,
+		b: 2,
+		internal: 3
+	};
+
+	Object.defineProperty(obj, "internal", {
+		enumerable: false
+	});
+
+	alert(Object.keys(obj));
+	alert(Object.getOwnPropertyNames(obj)); //a, internal, b
+
+	//Object.getOwnPropertyDescriptor(obj, prop) Возвращает дескриптор для свойства obj[prop] . ⬇
+
+	var obj = {
+	 	test: 5
+	}; 
+
+	var descriptor = Object.getOwnPropertyDescriptor(obj, "test");
+
+	// заменим value на геттер, для этого...
+	delete descriptor.value; //// ..нужно убрать value/writable
+	delete descriptor.writable;
+
+	descriptor.get = function() //and send get
+	{
+		alert("Preved: "); 
+	};
+
+	delete obj.test;
+
+	Object.defineProperty(obj, "test", descriptor);
+
+	obj.test; //Preved: :3
+</script>

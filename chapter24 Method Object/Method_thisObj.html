@@ -1,0 +1,29 @@
+<script>
+	var user = {
+		name: "Arsen",
+
+		sayHi: function() 
+		{
+			alert(this.name);
+		}
+	};
+
+	user.sayHi(); //sayGU in contest user;
+
+	//if we use not this a user like here ⬇
+
+	var user_withoutThis = {
+		name: "Arsen",
+
+		sayHi: function() 
+		{
+			alert(user_withoutThis.name); //error
+		} 
+	};
+
+	var admin = user_withoutThis;
+	user_withoutThis = null;
+
+	admin.sayHi(); //Oops inside sayHi by old name, mistake!
+	
+</script>

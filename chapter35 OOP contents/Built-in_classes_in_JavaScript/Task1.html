@@ -1,0 +1,35 @@
+<script type="text/javascript">
+	Function.prototype.defer = function(ms) {
+	  setTimeout(this, ms);
+	}
+
+
+	function f()
+	{
+		alert("Hello");
+	}
+
+	f.defer(10000); //Hello 
+
+	//example2
+	Function.prototype.defer2 = function(ms)
+	{
+		var f2 = this;
+		return function()
+		{
+			var args = arguments;
+			context = this;
+			setTimeout(function() 
+			{
+				f2.apply(context, args);
+			}, ms);
+		}
+	}
+
+	function f2(a, b)
+	{
+		alert(a + b);
+	}
+
+	f2.defer2(1000)(1, 2);
+</script>

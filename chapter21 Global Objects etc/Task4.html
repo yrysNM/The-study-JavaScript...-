@@ -1,0 +1,52 @@
+<script>
+	//sort task 🤔
+
+	var user = [
+	{
+		name: "Vasya",
+		surname: "Ivanov",
+		age: 20 
+	}, {
+		name: "Petia", 
+		surname: "Chapaiev",
+		age: 25
+	}, {
+		name: "Masha",
+		surname: "Medvedeva",
+		age: 18
+	}];
+
+
+	//just sort
+	// // по полю name (Вася, Маша, Петя)
+	// user.sort(function(a,b) 
+	// {
+	// 	return a.name > b.name ? 1 : -1;
+	// });
+
+	// // по полю age  (Маша, Вася, Петя)
+	// user.sort(function(a, b)
+	// {
+	// 	return a.age > b.age ? 1 : -1;
+	// });
+
+	// user.sort(function(a, b)
+	// 	{
+	// 		return a.surname > b.surname ? 1 : -1;
+	// 	});
+
+	user.forEach(function(user)
+	{
+		alert(user.name);
+	});
+
+	function byField(obj)
+	{
+		return function(a, b)
+		{
+			return a[obj] > b[obj] ? 1 : 1;
+		}
+	}
+
+	
+</script>

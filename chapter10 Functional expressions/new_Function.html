@@ -1,0 +1,14 @@
+<script>
+    var sum = new Function("a, b", " return a+b; ");
+
+    var result = sum(1, 2);
+    alert(result); //3
+
+
+    // То есть, функция создаётся вызовом new Function(params, code) :
+    // params
+    // Параметры функции через запятую в виде строки.
+    // code
+    // Код функции в виде строки.
+
+</script>

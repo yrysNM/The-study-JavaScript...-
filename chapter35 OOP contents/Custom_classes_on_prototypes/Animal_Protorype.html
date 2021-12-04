@@ -1,0 +1,28 @@
+<script type="text/javascript">
+	//constructor
+	function Animal(name)
+	{
+		this.name = name;
+		this.speed = 0;
+	}
+
+	//mehod in prototype
+	Animal.prototype.run = function(speed)
+	{
+		this.speed += speed;
+		alert(this.name + " running, speed " + this.speed);
+	};
+
+	Animal.prototype.stop = function()
+	{
+		this.speed = 0;
+		alert(this.name + " stoped");
+	};
+
+	var animal = new Animal("The beats");
+
+	alert( animal.speed ); // 0, свойство взято из прототипа
+	animal.run(5); // Зверь бежит, скорость 5
+	animal.run(5); // Зверь бежит, скорость 10
+	animal.stop(); //The beats stopped
+</script>

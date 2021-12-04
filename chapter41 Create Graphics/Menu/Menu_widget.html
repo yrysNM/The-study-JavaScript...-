@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create -- menu widget</title>
+</head>
+<body>
+	<div class = "menu" id = "sweets-menu">
+		<span class ="title">Сладости</span>
+		<ul>
+			<li>Cake</li>
+			<li>Ponchick</li>
+			<li>....</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		function Menu(options)
+		{
+			var elem = options.elem;
+			
+			elem.onmousedown = function()
+			{
+				return false;
+
+			};
+
+			elem.onclick = function(event)
+			{
+				if(event.target.closest(".title"))
+				{
+					elem.classList.toggle("open");
+				}
+			};
+		}
+
+		//use
+		var menu = new Menu({
+			elem:document.getElementById("sweets-menu")
+		});
+	</script>
+</body>
+</html>
